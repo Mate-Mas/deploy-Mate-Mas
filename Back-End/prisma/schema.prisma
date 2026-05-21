@@ -1,0 +1,87 @@
+generator client {
+  provider   = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Rol {
+  usuario
+  admin
+  superadmin
+}
+
+model Usuario {
+  id        String     @id @default(uuid())
+  email     String     @unique
+  nombre    String?
+  puntos    Int        @default(0)
+  rol       Rol        @default(usuario)
+  progreso  Progreso[]
+  insignias Insignia[]
+  createdAt DateTime   @default(now())
+}
+
+model Seccion {
+  id          Int         @id @default(autoincrement())
+  nombre      String
+  descripcion String
+  nivel       Int
+  escenarios  Escenario[]
+}
+
+model Escenario {
+  id          Int         @id @default(autoincrement())
+  titulo      String
+  descripcion String
+  categoria   String
+  seccionId   Int
+  seccion     Seccion     @relation(fields: [seccionId], references: [id])
+  ejercicios  Ejercicio[]
+}
+
+model Leccion {
+  id          Int        @id @default(autoincrement())
+  titulo      String
+  descripcion String
+  nivel       Int
+  categoria   String
+  ejercicios  Ejercicio[]
+  progreso    Progreso[]
+}
+
+model Ejercicio {
+  id        Int      @id @default(autoincrement())
+  tipo      String
+  pregunta  String
+  opciones  String[]
+  respuesta String
+  explicacion String?
+  leccionId Int
+  leccion   Leccion? @relation(fields: [leccionId], references: [id])
+  escenarioId Int?
+  escenario   Escenario? @relation(fields: [escenarioId], references: [id])
+}
+
+model Insignia {
+  id          String   @id @default(uuid())
+  nombre      String
+  descripcion String
+  imagenUrl   String?
+  tipo        String
+  usuarios    Usuario[]
+  createdAt   DateTime @default(now())
+}
+
+model Progreso {
+  id              Int      @id @default(autoincrement())
+  usuarioId       String
+  leccionId       Int
+  completada      Boolean  @default(false)
+  intentosFallidos Int     @default(0)
+  vecesCompletada  Int     @default(0)
+  usuario         Usuario  @relation(fields: [usuarioId], references: [id])
+  leccion         Leccion  @relation(fields: [leccionId], references: [id])
+  updatedAt       DateTime @updatedAt
+}
