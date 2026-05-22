@@ -24,9 +24,26 @@ if (process.env.DB_MODE === 'MOCK') {
             findMany: async () => ([]),
             findFirst: async () => ({})
         },
+            opcion: {
+                findMany: async () => ([]),
+                findUnique: async () => ({})
+            },
         usuario: {
             upsert: async () => ({}),
             update: async () => ({})
+            },
+            progreso: {
+                create: async () => ({}),
+                findMany: async () => ([]),
+                findUnique: async () => ({})
+            },
+            insignia: {
+                findMany: async () => ([]),
+                findUnique: async () => ({})
+            },
+            recurso: {
+                findMany: async () => ([]),
+                findUnique: async () => ({})
         }
     };
 } else {

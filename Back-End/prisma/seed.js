@@ -3,20 +3,29 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
-    await prisma.leccion.create({
+    await prisma.seccion.create({
         data: {
-            titulo: 'Introducción a la Aritmética',
+            nombre: 'Economía Doméstica',
             descripcion: 'Repaso de sumas y restas básicas.',
             nivel: 1,
-            categoria: 'Aritmética',
-            ejercicios: {
+            grado: 1,
+            puntosRequeridos: 0,
+            escenarios: {
                 create: [
                     {
-                        tipo: 'multiple-choice',
+                        titulo: 'La Compra Mensual',
+                        descripcion: 'Optimizando el presupuesto del hogar.',
                         pregunta: '¿Cuánto es 15 + 27?',
-                        opciones: ['32', '42', '45', '52'],
-                        respuesta: '42',
-                        explicacion: 'Al sumar 15 y 27, 5+7 es 12 (llevo 1), y 1+2+1 es 4. Total: 42.'
+                        explicacion: 'Al sumar 15 y 27: 5+7 es 12 (me llevo 1), y 1+2+(1 que me llevaba) es 4. Resultado: 42.',
+                        categoria: 'Aritmética',
+                        opciones: {
+                            create: [
+                                { texto: '32', puntos: 0 },
+                                { texto: '42', puntos: 10 },
+                                { texto: '45', puntos: 0 },
+                                { texto: '52', puntos: 0 }
+                            ]
+                        }
                     }
                 ]
             }

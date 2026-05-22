@@ -4,6 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 enum Rol {
@@ -18,8 +19,11 @@ model Usuario {
   nombre    String?
   puntos    Int        @default(0)
   rol       Rol        @default(usuario)
+  racha     Int        @default(0)
+  ultimaConexion DateTime @default(now())
   progreso  Progreso[]
   insignias Insignia[]
+  recursos  Recurso[]
   createdAt DateTime   @default(now())
 }
 
@@ -28,40 +32,43 @@ model Seccion {
   nombre      String
   descripcion String
   nivel       Int
+  grado       Int         @default(1)
+  puntosRequeridos Int    @default(0)
   escenarios  Escenario[]
+  recursoOtorgado Recurso?
 }
 
 model Escenario {
   id          Int         @id @default(autoincrement())
   titulo      String
   descripcion String
+  pregunta    String
+  explicacion String?
   categoria   String
   seccionId   Int
   seccion     Seccion     @relation(fields: [seccionId], references: [id])
-  ejercicios  Ejercicio[]
-}
-
-model Leccion {
-  id          Int        @id @default(autoincrement())
-  titulo      String
-  descripcion String
-  nivel       Int
-  categoria   String
-  ejercicios  Ejercicio[]
+  opciones    Opcion[]
+  insignias   Insignia[]
   progreso    Progreso[]
 }
 
-model Ejercicio {
+model Opcion {
   id        Int      @id @default(autoincrement())
-  tipo      String
-  pregunta  String
-  opciones  String[]
-  respuesta String
-  explicacion String?
-  leccionId Int
-  leccion   Leccion? @relation(fields: [leccionId], references: [id])
-  escenarioId Int?
-  escenario   Escenario? @relation(fields: [escenarioId], references: [id])
+  texto     String
+  puntos    Int      @default(0)
+  escenarioId Int
+  escenario   Escenario @relation(fields: [escenarioId], references: [id])
+}
+
+model Recurso {
+  id          String   @id @default(uuid())
+  nombre      String
+  valor       Int      @default(1)
+  usuarioId   String
+  usuario     Usuario  @relation(fields: [usuarioId], references: [id])
+  seccionId   Int      @unique
+  seccion     Seccion  @relation(fields: [seccionId], references: [id])
+  createdAt   DateTime @default(now())
 }
 
 model Insignia {
@@ -69,7 +76,9 @@ model Insignia {
   nombre      String
   descripcion String
   imagenUrl   String?
-  tipo        String
+  puntosRequeridos Int   @default(0)
+  escenarioId Int
+  escenario   Escenario @relation(fields: [escenarioId], references: [id])
   usuarios    Usuario[]
   createdAt   DateTime @default(now())
 }
@@ -77,11 +86,11 @@ model Insignia {
 model Progreso {
   id              Int      @id @default(autoincrement())
   usuarioId       String
-  leccionId       Int
-  completada      Boolean  @default(false)
+  escenarioId     Int
+  puntosObtenidos Int      @default(0)
+  resuelto        Boolean  @default(false)
   intentosFallidos Int     @default(0)
-  vecesCompletada  Int     @default(0)
   usuario         Usuario  @relation(fields: [usuarioId], references: [id])
-  leccion         Leccion  @relation(fields: [leccionId], references: [id])
+  escenario       Escenario @relation(fields: [escenarioId], references: [id])
   updatedAt       DateTime @updatedAt
 }
