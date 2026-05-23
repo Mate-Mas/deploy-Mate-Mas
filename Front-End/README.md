@@ -1,16 +1,44 @@
-# React + Vite
+# Comandos útiles
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Instalar dependencias 
 
-Currently, two official plugins are available:
+Desde la carpeta raíz 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Proyecto
 
-## React Compiler
+Web app realizada con React y Bootstrap
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologías 
 
-## Expanding the ESLint configuration
+    UI: React + React Router DOM
+    Estilos: Bootstrap 
+    Formularios: React Hook Form + Zod
+    Estado cliente: Zustand (Context)
+    Peticiones: Axios
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Estructura de carpetas 
+
+```
+src/
+├── components/           # Componentes reutilizables
+│   ├── ui/               # Componentes UI básicos
+│   │   ├── Button.jsx
+│   │   ├── Icon.jsx
+│   │   ├── Image.jsx
+│   │   └── Input.jsx
+│   ├── layout/           # Componentes de estructura de página
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   └── Sidebar.jsx
+│   └── widgets/          # Componentes complejos o secciones
+│       ├── ProductCard.jsx
+│       ├── UserProfile.jsx
+│       └── SearchBar.jsx
+├── pages/                # Páginas principales
+│   ├── Home.jsx          
+│   ├── Login.jsx         
+│   ├── Registro.jsx
+│   ├── About.jsx
+│   └── Contact.jsx
+└── assets/               # Archivos estáticos (imágenes, iconos, etc.)
+```
