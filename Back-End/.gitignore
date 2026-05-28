@@ -21,3 +21,4 @@ Thumbs.db
 prisma/migrations
 *.db
 *.db-journal
+src/generated
