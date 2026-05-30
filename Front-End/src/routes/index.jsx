@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'r
 
 import Register from '../pages/Register';
 
-import Home from '../pages/Home';
+import Landing from '../pages/Landing.jsx';
 import Dashboard from '../pages/Dashboard.jsx';
 import Profile from '../pages/Profile';
 import NotFound from '../pages/NotFound';
@@ -31,7 +31,7 @@ export default function AppRouter() {
         <Router>
             <Routes>
                 {/* Rutas públicas */}
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Landing />} />
                 
                 <Route
                     path="/login"
