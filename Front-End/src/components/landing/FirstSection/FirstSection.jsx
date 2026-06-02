@@ -5,6 +5,7 @@ import {
     Card,
 } from 'react-bootstrap';
 import { BiMath } from "react-icons/bi";
+import './FirstSection.css';
 
 const FirstSection = ({ navigate }) => {
     return (
