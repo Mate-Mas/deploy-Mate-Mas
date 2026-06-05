@@ -3,7 +3,7 @@ import {
     Row,
     Col,
 } from 'react-bootstrap';
-import { steps } from '../../data/Steps';
+import { steps } from '../../../data/Steps';
 
 const SecondSection = () => {
     return (

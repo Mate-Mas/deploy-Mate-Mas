@@ -11,6 +11,7 @@ import {
 } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { axiosInstance } from '../services/index';
 
 // Hook personalizado para manejar el estado del formulario de inicio de sesión
 const useLoginForm = () => {
@@ -56,21 +57,32 @@ const useLoginForm = () => {
         // Simulamos una autenticación exitosa
         console.log('Intentando iniciar sesión con:', { email, password });
 
-        const redirectPath = location.state?.from || '/dashboard';
-        login({ email });
+        // 
+        axiosInstance.post('/login', { email, password })
+            .then(response => {
+                // status 200 
+                login({ email });
+                console.log('Respuesta del servidor:', response.data);
+                // Aquí podrías manejar la respuesta del servidor, como guardar el token de autenticación
+                // Simulación de respuesta del servidor (éxito)
+                setToastMessage('✅ ¡Inicio de sesión exitoso! Redirigiendo...');
+                setToastVariant('success');
+                setShowToast(true);
 
-        // Simulación de respuesta del servidor (éxito)
-        setToastMessage('✅ ¡Inicio de sesión exitoso! Redirigiendo...');
-        setToastVariant('success');
-        setShowToast(true);
-
-        // Limpiar el formulario después de 2 segundos
-        setTimeout(() => {
-            setEmail('');
-            setPassword('');
-            // Aquí podrías redirigir al usuario a otra página
-            navigate(redirectPath, { replace: true });
-        }, 2000);
+                // Limpiar el formulario después de 2 segundos
+                setTimeout(() => {
+                    setEmail('');
+                    setPassword('');
+                    // Aquí podrías redirigir al usuario a otra página
+                    navigate('/dashboard', { replace: true });
+                }, 2000);
+            })
+            .catch(error => {
+                console.error('Error al iniciar sesión:', error);
+                setToastMessage('❌ Error al iniciar sesión. Por favor, intenta nuevamente.');
+                setToastVariant('danger');
+                setShowToast(true);
+            });
     };
 
     const handleSocialLogin = (provider) => {

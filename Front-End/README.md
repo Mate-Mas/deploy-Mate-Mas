@@ -92,11 +92,14 @@ pnpm add react-router-dom
 
 # Estructura inicial del proyecto
 
+![alt text](image.png)
+
 ```text
 Front-End/
 ├── public/
 ├── src/
 │   ├── assets/          # Imágenes, iconos y recursos estáticos
+|       ├──              # Carpeta con el nombre (con los archivos de .jsx y .css)
 │   ├── components/      # Componentes reutilizables
 │   ├── pages/           # Vistas principales
 │   ├── routes/          # Configuración de rutas

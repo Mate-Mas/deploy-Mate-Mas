@@ -8,7 +8,7 @@ import {
     Tab,
     Nav
 } from 'react-bootstrap';
-import { teamData } from '../../data/TeamData';
+import { teamData } from '../../../data/TeamData';
 
 const ThirdSection = () => {
     const [activeTab, setActiveTab] = useState('frontend');
