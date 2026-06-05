@@ -2,9 +2,17 @@ import 'dotenv/config';
 import express from 'express';
 import apiRoutes from './routes/api.routes.js';
 import prisma from './config/prisma.js';
+import cors from 'cors';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+// Configuración de CORS para permitir solicitudes desde el frontend
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 const isGeminiMissing = !process.env.GOOGLE_API_KEY || process.env.GOOGLE_API_KEY === 'api_key';
 
