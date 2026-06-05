@@ -9,14 +9,13 @@ import {
     Toast,
     ToastContainer
 } from 'react-bootstrap';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { axiosInstance } from '../services/index';
 
 // Hook personalizado para manejar el estado del formulario de inicio de sesión
 const useLoginForm = () => {
     const navigate = useNavigate();
-    const location = useLocation();
     const { login } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
