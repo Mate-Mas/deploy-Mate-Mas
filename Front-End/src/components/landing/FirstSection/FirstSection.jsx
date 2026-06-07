@@ -9,7 +9,7 @@ import './FirstSection.css';
 
 const FirstSection = ({ navigate }) => {
     return (
-        <Row className="vh-100 g-0">
+        <Row className="vh-100 g-0" id="inicio" >
             {/* Columna lateral izquierda - Decorativa */}
             <Col md={6} className="bg-primary d-none d-md-flex align-items-center justify-content-center text-white position-relative overflow-hidden">
                 <BiMath className="position-absolute text-white opacity-25" style={{ top: '15%', left: '10%', fontSize: '12rem' }} />

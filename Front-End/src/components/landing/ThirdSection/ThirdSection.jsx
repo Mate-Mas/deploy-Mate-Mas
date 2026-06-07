@@ -14,7 +14,7 @@ const ThirdSection = () => {
     const [activeTab, setActiveTab] = useState('frontend');
 
     return (
-        <Container fluid className="py-5">
+        <Container fluid className="py-5" id="nosotros">
             <Row className="justify-content-center mb-5">
                 <Col md={8} className="text-center">
                     <h2 className="display-4 fw-bold mb-3">

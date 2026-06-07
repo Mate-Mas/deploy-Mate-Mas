@@ -7,7 +7,7 @@ import { steps } from '../../../data/Steps';
 
 const SecondSection = () => {
     return (
-        <Container fluid className="py-5 bg-light">
+        <Container fluid className="py-5 bg-light" id="como-funciona">
             <Row className="justify-content-center mb-5">
                 <Col md={8} className="text-center">
                     <h2 className="display-4 fw-bold mb-3">¿Cómo funciona Mate+?</h2>

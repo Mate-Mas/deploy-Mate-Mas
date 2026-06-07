@@ -9,8 +9,10 @@ import {
     Button,
     Card,
     Toast,
-    ToastContainer
+    ToastContainer,
+    InputGroup
 } from 'react-bootstrap';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 //aca tengo los hooks para el formulario de registro, similar a los del login pero con campos adicionales como nombre 
 // y confirmación de contraseña
 
@@ -21,9 +23,13 @@ const useRegisterForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [toastMessage, setToastMessage] = useState('');
     const [toastVariant, setToastVariant] = useState('success'); // 'success' o 'danger'
     const [showToast, setShowToast] = useState(false);
+    const [genero,setGenero] = useState('');
+    const [lugar, setLugar] = useState('');
 // aca para memanejar el cambio de los campos del formulario, similar al login pero con más campos
     const handleChangeValue = (e) => {
         const { name, value } = e.target;
@@ -31,6 +37,8 @@ const useRegisterForm = () => {
         if (name === 'email') setEmail(value);
         if (name === 'password') setPassword(value);
         if (name === 'confirmPassword') setConfirmPassword(value);
+        if(name === 'genero') setGenero(value);
+        if(name === 'lugar') setLugar(value);
     };
 
 //manejar el envío del formulario, con validaciones básicas para campos vacíos, formato de email y 
@@ -87,6 +95,12 @@ const useRegisterForm = () => {
         email,
         password,
         confirmPassword,
+        showPassword,
+        setShowPassword,
+        showConfirmPassword,
+        setShowConfirmPassword,
+        genero,
+        lugar,
         handleChangeValue,
         toastMessage,
         toastVariant,
@@ -106,6 +120,12 @@ const {
     email,
     password,
     confirmPassword,
+    showPassword,
+    setShowPassword,
+    showConfirmPassword,
+    setShowConfirmPassword,
+    genero,
+    lugar,
     showToast,
     toastMessage,
     toastVariant,
@@ -118,13 +138,20 @@ const {
         <>
             <Container fluid className="vh-100 vw-100 p-0 m-0"> 
                 <Row className="h-100 g-0"> 
-                    <Col md={6} className="bg-primary d-none d-md-flex align-items-center justify-content-center text-white">
+                    <Col md={6} className="bg-primary d-none d-md-flex align-items-center justify-content-center text-white"
+                        style={{
+                        backgroundImage: 'url(src/images/fondo2.jpeg)',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                    }}
+                    >
                             <div className="text-center p-5">
-                                <h1 className="display-4 mb-4 font-weight-bold">Bienvenido</h1>
-                                <p className="lead">Únete y comienza a gestionar tu aprendizaje</p>
+                                <h1 className="display-4 mb-4 font-weight-bold text-white"  style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>Bienvenido</h1>
+                                <p className="lead text-white"  style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>Únete y comienza a gestionar tu aprendizaje</p>
                             </div>
                         </Col>
-                        <Col md={6} className="d-flex align-items-center justify-content-center bg-light">  
+                        <Col md={6} className="d-flex align-items-center justify-content-center bg-light"
+                            style={{ overflowY: 'auto', height: '100vh' }}>  
                         <Card className="border-0 bg-transparent" style={{ width: '100%', maxWidth: '400px' }}> 
                             <Card.Body className="p-4"> 
                             <div className="text-center mb-4"> 
@@ -162,31 +189,86 @@ const {
 
                                         <Form.Group className="mb-4">
                                             <Form.Label>Contraseña</Form.Label>
+                                            <InputGroup>
                                             <Form.Control
-                                                type="password"
+                                                type={showPassword ? 'text' : 'password'}
                                                 placeholder="••••••••"
                                                 size="lg"
                                                 onChange={handleChangeValue}
                                                 name="password"
                                                 value={password}
                                             />
+                                            <Button
+                                            size="lg"
+                                            variant="outline-secondary"
+                                            onClick={() => setShowPassword(!showPassword)}
+                                            tabIndex={-1}
+                                            >
+                                            {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                            </Button>
+                                             </InputGroup>
                                         </Form.Group>       
                                         <Form.Group className="mb-4">
                                             <Form.Label>Confirmar contraseña</Form.Label>
+                                                <InputGroup>    
                                             <Form.Control
-                                                type="password"
+                                                type={showConfirmPassword ? 'text' : 'password'}
                                                 placeholder="••••••••"
                                                 size="lg"
                                                 onChange={handleChangeValue}
                                                 name="confirmPassword"
                                                 value={confirmPassword}
                                             />
-                                        </Form.Group>  
+                                            <Button
+                                             size="lg"
+                                            variant="outline-secondary"
+                                            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                            tabIndex={-1}
+                                            >
+                                            {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+                                             </Button>
+                                             </InputGroup>
+                                        </Form.Group> 
+                                        <Row className="mb-3 g-2">
+                                        <Col xs={6}>
+                                            <Form.Group>
+                                                <Form.Label>Género</Form.Label>
+                                                <Form.Select
+                                                    name="genero"
+                                                    value={genero}
+                                                    onChange={handleChangeValue}
+                                                >
+                                                    <option value="">Seleccionar</option>
+                                                    <option value="masculino">Masculino</option>
+                                                    <option value="femenino">Femenino</option>
+                                                    <option value="otro">Otro</option>
+                                                    <option value="prefiero_no_decir">Prefiero no decir</option>
+                                                </Form.Select>
+                                            </Form.Group>
+                                        </Col>
+                                        <Col xs={6}>
+                                            <Form.Group>
+                                                <Form.Label>Lugar</Form.Label>
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder="Ciudad o país"
+                                                    onChange={handleChangeValue}
+                                                    name="lugar"
+                                                    value={lugar}
+                                                />
+                                            </Form.Group>
+                                        </Col>
+                                    </Row>
                                         <Button
                                             variant="primary"
                                             type="submit"
                                             size="lg"
-                                            className="w-100 mb-3"
+                                            className="w-100 mt-3"
+                                            style={{ 
+                                            backgroundColor: '#2ECC71', 
+                                            borderColor: '#2ECC71',
+                                            color: 'white'
+                                            }}
                                         >
                                             Registrarse
                                         </Button>            
