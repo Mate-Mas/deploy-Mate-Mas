@@ -10,7 +10,7 @@ import './FirstSection.css';
 
 const FirstSection = ({ navigate }) => {
     return (
-        <Row className="vh-100 g-0" style={{ backgroundColor: "#F0F1EB" }}>
+        <Row className="vh-100 g-0" id="inicio" style={{ backgroundColor: "#F0F1EB" }}>
             {/* Columna lateral izquierda - Decorativa */}
             <Col md={6} className="d-none d-md-flex align-items-center justify-content-center text-white position-relative overflow-hidden">
                 <svg

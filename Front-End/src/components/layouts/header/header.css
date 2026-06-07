@@ -1,0 +1,29 @@
+html {
+    scroll-behavior: smooth;
+     scroll-padding-top: 70px;
+}
+
+
+.navbar-custom {
+    background-color: #ECF0F1;
+}
+
+.navbar-custom .nav-link {
+    color: "#2C3E50" !important;
+}
+
+.navbar-custom .navbar-brand {
+    color: "#2C3E50"!important;
+    
+}
+
+
+.navbar-custom .navbar-toggler {
+    border-color: #2C3E50;
+}
+
+/*
+Primario: Gris grafito #2C3E50
+Acento: Verde menta #2ECC71
+Fondo: Crema claro #ECF0F1
+*/

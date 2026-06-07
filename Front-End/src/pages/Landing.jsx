@@ -6,6 +6,7 @@ import FirstSection from '../components/landing/FirstSection/FirstSection';
 import SecondSection from '../components/landing/SecondSection/SecondSection';
 import ThirdSection from '../components/landing/ThirdSection/ThirdSection';
 import Footer from '../components/layouts/Footer/Footer';
+import Header from '../components/layouts/header/Header';
 
 const Landing = () => {
     const navigate = useNavigate();
@@ -40,6 +41,7 @@ const Landing = () => {
 
     return (
         <Container ref={containerRef} fluid className="p-0 m-0 overflow-auto overflow-x-hidden">
+            <Header />
             <FirstSection navigate={navigate} />
             <SecondSection />
             <ThirdSection />

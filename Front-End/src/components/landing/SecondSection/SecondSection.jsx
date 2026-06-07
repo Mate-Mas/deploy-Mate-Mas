@@ -8,7 +8,7 @@ import { steps } from '../../../data/Steps';
 
 const SecondSection = () => {
     return (
-        <Container fluid className="p-5" style={{ backgroundColor: '#2C3D4D' }}>
+        <Container fluid className="p-5" style={{ backgroundColor: '#2C3D4D' }} id="como-funciona">
             <Stack>
                 {steps.map((step, index) => (
                     <Row key={step.id} className={`py-4 align-items-center justify-content-around gap-2 ${index % 2 === 1 ? 'flex-row-reverse' : ''}`} style={{ marginBottom: '3rem' }}>
