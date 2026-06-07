@@ -1,13 +1,22 @@
+import { useState } from 'react';
+import FirstSection from '../components/layouts/Onboarding/FirstSection';
+import SecondSection from '../components/layouts/Onboarding/SecondSection';
 
+const Onboarding = () => {
+  const [activeSection, setActiveSection] = useState('first');
 
+  const handleStart = () => {
+    setActiveSection('second');
+  };
 
-function Onboarding() {
   return (
-    <div className="onboarding">
-      <h1>Bienvenido a Mate+</h1>
-      <p>Por favor sigue los pasos para completar tu proceso de registro.</p>
-      {/* Add your onboarding steps and content here */}
+    <div>
+      {activeSection === 'first' ? (
+        <FirstSection onStart={handleStart} />
+      ) : (
+        <SecondSection />
+      )}
     </div>
   );
-}
+};
 export default Onboarding;

@@ -88,6 +88,16 @@ pnpm add bootstrap react-bootstrap
 pnpm add react-router-dom
 ```
 
+## React Iconos
+
+```bash
+pnpm install font-awesome
+pnpm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
+pnpm install @fortawesome/free-regular-svg-icons @fortawesome/free-brands-svg-icons
+```
+
+
+
 -----------------------------------------------------------------------------------------
 
 # Estructura inicial del proyecto

@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* Colocamos la imagen provista como fondo de pantalla */
+  background-image: url('../../../Images/fondo4.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+/* ==========================================================================
+   DISEÑO DE LA TARJETA (Mobile First)
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: 340px; /* Tamaño compacto estilo tarjeta */
+  background: #2c3e50;
+  text-align: center;
+  border-radius: 20px;
+  padding: 35px 25px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.container header {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  color: #ECF0F1;
+}
+
+/* --- Barra de progreso unida y dinámica --- */
+.container .progress-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 35px auto;
+  width: 100%; /* Cambiado de 30% a 100% para ocupar la tarjeta */
+  user-select: none;
+}
+
+.container .progress-bar .step {
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.container .progress-bar .step p {
+  font-weight: 500;
+  font-size: 11px;
+  color: #7f8c8d;
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.container .progress-bar .step p.active {
+  color: #2ecc71;
+  font-weight: 600;
+}
+
+.progress-bar .step .bullet {
+  height: 28px;
+  width: 28px;
+  border: 2px solid #7f8c8d;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  background: #2c3e50;
+  z-index: 2;
+  font-weight: 600;
+  font-size: 13px;
+  color: #7f8c8d;
+  transition: all 0.3s ease;
+}
+
+.progress-bar .step .bullet.active {
+  border-color: #2ecc71;
+  color: #2ecc71;
+}
+
+/* Cuando el paso ya se completó y se avanzó, el círculo se llena */
+.container .progress-bar .step.completed .bullet {
+  background: #2ecc71;
+  color: #fff;
+}
+
+.progress-bar .step .bullet span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Líneas conectoras que cambian de color */
+.progress-bar .step::before {
+  position: absolute;
+  content: '';
+  bottom: 13px;
+  left: 50%; /* Nace desde el centro de este círculo */
+  height: 2px;
+  width: 100%; /* Se extiende exactamente hasta el centro del siguiente */
+  background: #7f8c8d; /* Color gris apagado por defecto */
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+/* Si el paso actual ya fue completado, la barra conectora se ilumina en verde */
+.container .progress-bar .step.completed::before {
+  background: #2ecc71;
+}
+
+/* Ocultamos la línea sobrante del último paso */
+.container .progress-bar .step:last-child::before {
+  display: none;
+}
+
+/* --- Formulario Deslizable --- */
+.container .form-outer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.container .form-outer form {
+  display: flex;
+  width: 300%; /* Son 3 pasos en total ahora */
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.form-outer form .page {
+  width: 33.333%;
+  padding: 0 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-outer form .page .title {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 25px;
+  color: #ECF0F1;
+  min-height: 50px; /* Evita desajustes si el texto ocupa más líneas */
+}
+
+/* --- Grilla de Opciones en Dos Columnas --- */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Crea dos columnas exactas de igual tamaño */
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* Caso especial si hay un número impar de opciones (ej: el paso 1 que tiene 5) */
+.options-grid button:last-child:nth-child(odd) {
+  grid-column: span 2; /* Hace que la última opción ocupe todo el ancho inferior */
+}
+
+/* --- Botones de Opciones Interactivos --- */
+.option-btn {
+  width: 100%;
+  padding: 12px 10px;
+  background: #34495e;
+  border: 2px solid #455a6f;
+  border-radius: 10px;
+  color: #bdc3c7;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.option-btn:hover {
+  background: #415b76;
+  color: #fff;
+  border-color: #7f8c8d;
+}
+
+/* ESTADO SELECCIONADO (Cambio de color exclusivo) */
+.option-btn.selected {
+  background: rgba(46, 204, 113, 0.15); /* Verde translúcido de fondo */
+  border-color: #2ecc71;                 /* Borde verde brillante */
+  color: #2ecc71;                        /* Texto resaltado */
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.2);
+}
+
+/* --- Botones de Navegación Inferiores (Más pequeños) --- */
+.form-outer form .page .field.btns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Centrado para el primer paso que no tiene botón "Atrás" */
+.field.btns.central-btn {
+  justify-content: center;
+}
+
+form .page .field.btns button {
+  flex: 1;
+  max-width: 110px; /* Tamaño más pequeño y controlado */
+  height: 38px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-transform: none;
+}
+
+form .page .field.btns button.prev {
+  background: #7f8c8d;
+  color: #fff;
+}
+
+form .page .field.btns button.prev:hover {
+  background: #95a5a6;
+}
+
+form .page .field.btns button.next,
+form .page .field.btns button.submit {
+  background: #2ecc71;
+  color: #fff;
+}
+
+form .page .field.btns button.next:hover,
+form .page .field.btns button.submit:hover {
+  background: #27ae60;
+}
+
+form .page .field.btns button:disabled {
+  background: #566573 !important;
+  color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* Mensajes de feedback */
+.status-msg {
+  font-size: 13px;
+  margin-top: 15px;
+  font-weight: 500;
+}
+.status-msg.error { color: #e74c3c; }
+.status-msg.success { color: #2ecc71; }
+
+/* ==========================================================================
+       Estilos para primera Sección
+   ========================================================================== */
+   .title2{
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #ECF0F1;
+    text-align: center;
+    }
+
+
+/* ==========================================================================
+   MEDIA QUERY PARA COMPUTADORAS Y TABLETS
+   ========================================================================== */
+@media (min-width: 576px) {
+  .container {
+    max-width: 420px; /* Crece ligeramente en PC para dar más holgura a la grilla */
+    padding: 40px 35px;
+  }
+  
+  .form-outer form .page .title {
+    font-size: 19px;
+  }
+
+  .option-btn {
+    font-size: 15px;
+    padding: 14px 12px;
+  }
+}
