@@ -14,7 +14,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   /* Colocamos la imagen provista como fondo de pantalla */
-  background-image: url('...../images/fondo2.jpg'); 
+  background-image: url('../../../Images/fondo4.png'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -266,6 +266,17 @@ form .page .field.btns button:disabled {
 }
 .status-msg.error { color: #e74c3c; }
 .status-msg.success { color: #2ecc71; }
+
+/* ==========================================================================
+       Estilos para primera Sección
+   ========================================================================== */
+   .title2{
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #ECF0F1;
+    text-align: center;
+    }
+
 
 /* ==========================================================================
    MEDIA QUERY PARA COMPUTADORAS Y TABLETS

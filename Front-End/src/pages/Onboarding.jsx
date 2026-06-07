@@ -1,16 +1,22 @@
-import { Container } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import FirstSection from '../components/layouts/Onboarding/FirstSection';
+import SecondSection from '../components/layouts/Onboarding/SecondSection';
 
+const Onboarding = () => {
+  const [activeSection, setActiveSection] = useState('first');
 
+  const handleStart = () => {
+    setActiveSection('second');
+  };
 
-function Onboarding() {
-  const navigate = useNavigate();
   return (
-    <div className="onboarding">
-      <FirstSection />
-     
+    <div>
+      {activeSection === 'first' ? (
+        <FirstSection onStart={handleStart} />
+      ) : (
+        <SecondSection />
+      )}
     </div>
   );
-}
+};
 export default Onboarding;
