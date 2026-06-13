@@ -2,14 +2,12 @@ import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
-const dataSource = process.env.DATA_SOURCE?.trim().toUpperCase();
 
 let supabase;
 
-// Solo inicializamos el cliente de Supabase si estamos en modo DB
-// y si las credenciales no son los placeholders
-console.log(`Supabase Client (Back-End): DATA_SOURCE es ${dataSource}`);
-if (dataSource === 'DB' && supabaseUrl && supabaseAnonKey &&
+// En producción (Vercel) o si las llaves están presentes, usamos el cliente real.
+// Eliminamos la dependencia de DATA_SOURCE para evitar fallos por olvido de configuración.
+if (supabaseUrl && supabaseAnonKey &&
     !supabaseUrl.includes('[TU_PROYECTO]') && !supabaseAnonKey.includes('[ANON_KEY]')) {
     supabase = createClient(supabaseUrl, supabaseAnonKey);
 } else {

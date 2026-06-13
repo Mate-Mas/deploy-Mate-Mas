@@ -35,11 +35,13 @@ app.use(cors({
 }));
 
 // Diagnóstico de variables críticas (sin exponer valores)
-console.log('📋 [DIAGNOSTIC] Estado de variables críticas:');
-console.log(`- DATABASE_URL: ${process.env.DATABASE_URL ? '✅ DETECTADA' : '❌ FALTANTE'}`);
-console.log(`- SUPABASE_URL: ${process.env.SUPABASE_URL ? '✅ DETECTADA' : '❌ FALTANTE'}`);
-console.log(`- SUPABASE_ANON_KEY: ${process.env.SUPABASE_ANON_KEY ? '✅ DETECTADA' : '❌ FALTANTE'}`);
-console.log(`- GOOGLE_API_KEY: ${process.env.GOOGLE_API_KEY ? '✅ DETECTADA' : '❌ FALTANTE'}`);
+const diagStatus = {
+    DB: process.env.DATABASE_URL ? '✅' : '❌',
+    S_URL: process.env.SUPABASE_URL ? '✅' : '❌',
+    S_KEY: process.env.SUPABASE_ANON_KEY ? '✅' : '❌',
+    G_KEY: process.env.GOOGLE_API_KEY ? '✅' : '❌'
+};
+console.log(`📋 [DIAG] DB:${diagStatus.DB} | S_URL:${diagStatus.S_URL} | S_KEY:${diagStatus.S_KEY} | G_KEY:${diagStatus.G_KEY}`);
 
 const isGeminiMissing = !process.env.GOOGLE_API_KEY || process.env.GOOGLE_API_KEY === 'api_key';
 
