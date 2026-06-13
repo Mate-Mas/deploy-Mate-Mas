@@ -19,3 +19,5 @@ prisma/migrations
 *.db-journal
 src/generated
 Back-End/src/generated/
+.vercel
+.env*
