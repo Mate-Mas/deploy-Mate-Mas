@@ -17,8 +17,9 @@ export const registrarUsuario = async (req, res, next) => {
             return res.status(400).json({ error: "Falta UID de autenticación" });
         }
 
-        const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || "").split(",").map(e => e.trim().toLowerCase());
-        const SUPERADMIN_EMAILS = (process.env.SUPERADMIN_EMAILS || "").split(",").map(e => e.trim().toLowerCase());
+        const cleanEnv = (val) => (val || "").replace(/[\[\]]/g, "").split(",").map(e => e.trim().toLowerCase()).filter(Boolean);
+        const ADMIN_EMAILS = cleanEnv(process.env.ADMIN_EMAILS);
+        const SUPERADMIN_EMAILS = cleanEnv(process.env.SUPERADMIN_EMAILS);
 
         let rolAsignado = 'usuario';
         if (SUPERADMIN_EMAILS.includes(email.toLowerCase())) {
@@ -63,7 +64,7 @@ export const loginUsuario = async (req, res, next) => {
                 email: usuario.email,
                 nombre: usuario.nombre,
                 rol: usuario.rol,
-                token: "dev-bypass-token"
+                token: "real-supabase-token-expected" // Este token debería venir de Supabase en el Front-End
             }
         });
     } catch (error) {

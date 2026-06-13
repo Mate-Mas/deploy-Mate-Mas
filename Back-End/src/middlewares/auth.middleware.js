@@ -2,25 +2,15 @@ import supabase from '../config/supabase.js';
 import prisma from '../config/prisma.js';
 
 export const checkAuth = async (req, res, next) => {
-    const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || "").split(",").map(e => e.trim().toLowerCase());
-    const SUPERADMIN_EMAILS = (process.env.SUPERADMIN_EMAILS || "").split(",").map(e => e.trim().toLowerCase());
+    // Limpiamos posibles corchetes o espacios que alguien haya metido en el .env por error
+    const cleanEnv = (val) => (val || "").replace(/[\[\]]/g, "").split(",").map(e => e.trim().toLowerCase()).filter(Boolean);
+    const ADMIN_EMAILS = cleanEnv(process.env.ADMIN_EMAILS);
+    const SUPERADMIN_EMAILS = cleanEnv(process.env.SUPERADMIN_EMAILS);
 
     const authHeader = req.headers.authorization;
-
-    // Acceso directo por Llave Maestra (para el "pirata informático" del Ministerio)
-    const masterKey = process.env.ADMIN_MASTER_KEY;
-    if (masterKey && req.query.key === masterKey) {
-        req.user = { id: 'master-key-access', email: 'admin@local', rol: 'superadmin' };
-        return next();
-    }
-
     // Buscamos el token en: Header, Parámetro URL o Cookie (para el navegador)
     const cookieToken = req.headers.cookie?.match(/access_token=([^;]+)/)?.[1];
     const token = authHeader?.split(' ')[1] || req.query.token || cookieToken;
-
-    if (!token) {
-        return res.status(401).json({ error: 'No se proporcionó un token de acceso' });
-    }
 
     try {
         const { data: { user }, error } = await supabase.auth.getUser(token);
@@ -31,6 +21,8 @@ export const checkAuth = async (req, res, next) => {
 
         let rolFinal = 'usuario';
         const userEmail = user.email?.toLowerCase();
+
+        console.log(`🔐 [AUTH] Verificando rol para: ${userEmail}`);
 
         if (SUPERADMIN_EMAILS.includes(userEmail)) {
             rolFinal = 'superadmin';

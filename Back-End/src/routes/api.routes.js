@@ -25,7 +25,6 @@ router.get('/logs', checkAuth, getLogs);
 router.get('/admin-be/main', checkAuth, checkRole(['admin', 'superadmin']), admin.getAdminMain);
 router.get('/admin-be/checkup', checkAuth, checkRole(['admin', 'superadmin']), admin.getCheckupStatus);
 router.get('/admin-be/analytics', checkAuth, checkRole(['admin', 'superadmin']), admin.getAnalyticsData);
-router.get('/admin-be/upsert_manual', checkAuth, checkRole(['admin', 'superadmin']), admin.upsertManual);
 router.post('/admin-be/test-feedback', checkAuth, checkRole(['admin', 'superadmin']), admin.testFeedback);
 
 export default router;

@@ -15,61 +15,6 @@ export const getAdminMain = async (req, res) => {
     });
 };
 
-export const upsertManual = async (req, res, next) => {
-    try {
-        const filePath = path.join(__dirname, '../../data/usuarios.csv');
-        if (!fs.existsSync(filePath)) {
-            return res.status(404).json({ error: "Archivo usuarios.csv no encontrado" });
-        }
-
-        const content = fs.readFileSync(filePath, 'utf-8');
-        const lines = content.replace(/\r/g, '').split('\n').filter(line => line.trim() !== '');
-        const headers = lines[0].split(',').map(h => h.trim());
-        const usuarios = lines.slice(1).map(line => {
-            const values = line.split(',');
-            return headers.reduce((obj, header, index) => {
-                obj[header] = values[index]?.trim();
-                return obj;
-            }, {});
-        });
-
-        const adminEmail = req.user.email.toLowerCase();
-
-        // Cambiamos a procesamiento secuencial controlado para evitar saturar conexiones
-        let syncedCount = 0;
-        for (const u of usuarios) {
-            try {
-                // PROTECCIÓN NÚCLEO: Si el usuario del CSV es el admin actual, lo saltamos.
-                // Esto evita que Supabase dispare eventos de sesión que generen loops.
-                if (u.email.toLowerCase() === adminEmail) continue;
-
-                await prisma.usuario.upsert({
-                    where: { email: u.email.toLowerCase() },
-                    update: {
-                        nombre: u.nombre,
-                        rol: u.rol,
-                    },
-                    create: {
-                        id: u.id || `legacy-${Date.now()}-${Math.random()}`,
-                        email: u.email.toLowerCase(),
-                        nombre: u.nombre,
-                        rol: u.rol,
-                        password: u.password || 'User123!'
-                    }
-                });
-                syncedCount++;
-            } catch (err) {
-                console.error(`Error sincronizando a ${u.email}:`, err.message);
-            }
-        }
-
-        res.json({ status: "SUCCESS", synced: syncedCount });
-    } catch (error) {
-        console.error("Error en upsert manual:", error);
-        res.status(500).json({ error: error.message });
-    }
-};
-
 export const getCheckupStatus = async (req, res, next) => {
     try {
         const start = Date.now();

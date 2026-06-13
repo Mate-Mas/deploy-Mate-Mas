@@ -80,25 +80,6 @@ export const AuthProvider = ({ children }) => {
 
             return data;
         } catch (err) {
-                // Solo caemos en el mock si Supabase realmente no está o da error de conexión
-                const isMockMode = !import.meta.env.VITE_SUPABASE_URL || import.meta.env.VITE_SUPABASE_URL.includes('[TU_PROYECTO]');
-
-                if (isMockMode || err.message === "SUPABASE_UNAVAILABLE" || err.message === "SUPABASE_UNAVAILABLE_MOCK") {
-                    console.warn("⚠️ Usando autenticación de respaldo (Back-End Mock)");
-                const response = await api.post('/usuarios/login', {
-                    email,
-                    password
-                });
-                if (response.data) {
-                    const mockSession = {
-                        user: { email, id: response.data.user?.id || 'local-auth' },
-                        access_token: response.data.user?.token || 'local-mock-token'
-                    };
-                    if (supabase.auth._updateMockSession) supabase.auth._updateMockSession(mockSession);
-                    setSession(mockSession);
-                }
-                return response.data;
-            }
             throw err;
         }
     };
@@ -113,21 +94,6 @@ export const AuthProvider = ({ children }) => {
             if (error) throw error;
             return data;
         } catch (err) {
-            if (err.message === "SUPABASE_UNAVAILABLE_MOCK" || err.status === 400) {
-                console.warn("⚠️ Supabase no disponible. Entrando en modo de autenticación local (Mock)");
-                const response = await api.post('/usuarios/registro', {
-                    uid: 'mock-' + Date.now(),
-                    email,
-                    password,
-                    nombre,
-                    ...extraData
-                });
-                if (response.data) {
-                    const mockSession = { user: { email, id: 'local-auth' }, access_token: 'local-mock-token' };
-                    setSession(mockSession);
-                }
-                return response.data;
-            }
             throw err;
         }
     };
