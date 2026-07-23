@@ -45,7 +45,6 @@ export const AuthProvider = ({ children }) => {
                 console.warn("⚠️ Sesión inválida detectada. Limpiando...", error);
                 logout();
             }
-
             if (error.code === 'ERR_NETWORK' || error.code === 'ECONNABORTED' || !error.response) {
                 lastFetchedId.current = null;
             }
@@ -54,7 +53,6 @@ export const AuthProvider = ({ children }) => {
             isFetching.current = false;
         }
     }, [logout]);
-
     const completeInitialization = useCallback(() => {
         if (!initialized) {
             setInitialized(true);

@@ -79,29 +79,17 @@ const useRegisterForm = () => {
     setShowProfileModal(true);
   };
   const handleCompleteProfile = async () => {
-    if (!nombre || !usuario || !anioNacimiento || !genero || !lugar) {
+    if (!nombre ||  !genero ) {
       setToastMessage("❌ Completá todos los campos del perfil");
       setToastVariant("danger");
       setShowToast(true);
       return;
     }
 
-    const anioActual = new Date().getFullYear();
-    const anio = Number(anioNacimiento);
-
-    if (anio < 1900 || anio > anioActual - 18) {
-      setToastMessage(`❌ Ingresá un año de nacimiento válido`);
-      setToastVariant("danger");
-      setShowToast(true);
-      return;
-    }
-
+   
     try {
       await register(email, password, nombre, {
-        usuario,
-        anioNacimiento,
         genero,
-        lugar,
       });
       setToastMessage("✅ Registro exitoso");
       setToastVariant("success");
@@ -136,12 +124,6 @@ const useRegisterForm = () => {
     setAcceptedTerms,
     genero,
     setGenero,
-    lugar,
-    setLugar,
-    usuario,
-    setUsuario,
-    anioNacimiento,
-    setAnioNacimiento,
     showProfileModal,
     setShowProfileModal,
     handleChangeValue,
@@ -174,12 +156,6 @@ const RegisterPage = () => {
     setAcceptedTerms,
     genero,
     setGenero,
-    lugar,
-    setLugar,
-    usuario,
-    setUsuario,
-    anioNacimiento,
-    setAnioNacimiento,
     showProfileModal,
     setShowProfileModal,
     showToast,
@@ -354,7 +330,6 @@ const RegisterPage = () => {
                       />
                     )}
                   </div>
-
                   {/* 👁 mostrar/ocultar */}
                   <div
                     onClick={() => setShowPassword(!showPassword)}
@@ -572,36 +547,7 @@ const RegisterPage = () => {
               }}
             />
           </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Control
-              type="text"
-              placeholder="Usuario"
-              value={usuario}
-              onChange={(e) => setUsuario(e.target.value)}
-              style={{
-                border: "none",
-                borderBottom: "1px solid #e0e0e0",
-                borderRadius: 0,
-                boxShadow: "none",
-              }}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Control
-              type="number"
-              placeholder="Año de nacimiento"
-              value={anioNacimiento}
-              onChange={(e) => setAnioNacimiento(e.target.value)}
-              min="1900"
-              max={new Date().getFullYear() - 18}
-              style={{
-                border: "none",
-                borderBottom: "1px solid #e0e0e0",
-                borderRadius: 0,
-                boxShadow: "none",
-              }}
-            />
-          </Form.Group>
+        
           <Form.Group className="mb-3">
             <Form.Select
               value={genero}
@@ -617,23 +563,6 @@ const RegisterPage = () => {
               <option value="Femenino">Femenino</option>
               <option value="Masculino">Masculino</option>
               <option value="Prefiero no decirlo">Prefiero no decirlo</option>
-            </Form.Select>
-          </Form.Group>
-          <Form.Group className="mb-4">
-            <Form.Select
-              value={lugar}
-              onChange={(e) => setLugar(e.target.value)}
-              style={{
-                border: "none",
-                borderBottom: "1px solid #e0e0e0",
-                borderRadius: 0,
-                boxShadow: "none",
-              }}
-            >
-              <option value="">Ubicación</option>
-              <option value="Argentina">Argentina</option>
-              <option value="Otro pais"> Otro pais</option>
-              {/* TODO: traer provincias desde el backend */}
             </Form.Select>
           </Form.Group>
           <Button
