@@ -27,12 +27,6 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-const isGeminiMissing = !process.env.GOOGLE_API_KEY || process.env.GOOGLE_API_KEY === 'api_key';
-
-if (isGeminiMissing) {
-    console.log('\x1b[33m%s\x1b[0m', 'Atención: faltan las Keys de permiso y GeminiCli no va a dar las respuestas automatizadas, agregar una API Key GRATUITA desde tu cuenta de Google en Google Studio.');
-}
-
 app.use(express.json());
 
 app.use('/api', apiRoutes);
