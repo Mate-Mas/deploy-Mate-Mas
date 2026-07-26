@@ -7,7 +7,6 @@ import { useAuth } from '../../../../context/AuthContext';
 import { LuChevronDown, LuChevronUp } from 'react-icons/lu';
 import { useMediaQuery } from '../../../../hooks/useMediaQuery';
 import ButtonFloat from '../../../ui/ButtonFloat/ButtonFloat';
-import Configuracion from '../../Configuracion/Configuracion';
 
 export default function Header({ showHeader, setShowHeader }) {
   const navigate = useNavigate();
@@ -65,16 +64,6 @@ export default function Header({ showHeader, setShowHeader }) {
 
         <Navbar.Toggle aria-controls="navbar-nav" />
 
-        <Navbar.Collapse id="navbar-nav" className="align-items-center justify-content-center">
-          <Nav className="d-flex align-items-center gap-1 gap-lg-5 py-2 py-lg-0">
-            <Nav.Link onClick={() => navigate("/dashboard")}>Curso</Nav.Link>
-            <Nav.Link onClick={() => navigate("/mixto")}>Mixto</Nav.Link>
-            <Nav.Link onClick={() => navigate("/ranking")}>Ranking</Nav.Link>
-            <Nav.Link onClick={() => navigate("/calculadora")}>Calculadora</Nav.Link>
-            <Nav.Link onClick={() => navigate("/configuracion")}>Configuración</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-
         <div className="hidden md:block d-flex align-items-center gap-2 gap-lg-3">
           <Dropdown align="end">
             <Dropdown.Toggle
@@ -113,15 +102,24 @@ export default function Header({ showHeader, setShowHeader }) {
             </Dropdown.Menu>
           </Dropdown>
         </div>
+        
+        <Navbar.Collapse id="navbar-nav" className="align-items-center justify-content-center">
+          <Nav className="d-flex align-items-center gap-1 gap-lg-5 py-2 py-lg-0">
+            <Nav.Link onClick={() => navigate("/dashboard")}>Curso</Nav.Link>
+            <Nav.Link onClick={() => navigate("/mixto")}>Mixto</Nav.Link>
+            <Nav.Link onClick={() => navigate("/ranking")}>Ranking</Nav.Link>
+            <Nav.Link onClick={() => navigate("/perfil")}>Mi Perfil</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
         <ButtonFloat
           className="btn btn-primary"
           onClick={toggleHeader}
           style={{
             backgroundColor: showHeader ? '#FF6B6B' : '#FFDB54',
             border: 'none',
-            top: isMobile ? "1rem" : "100%",
+            top: "100%",
             right: 10,
-            padding: isMobile ? "0 1rem" : "1rem",
+            padding: "1rem",
             position: 'absolute',
             boxShadow: showHeader
               ? "0 8px 24px rgba(255, 107, 107, 0.4)"
@@ -134,11 +132,11 @@ export default function Header({ showHeader, setShowHeader }) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: isMobile ? "4px" : "8px",
+            gap: "8px",
             transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
             transform: showHeader ? "scale(1.05)" : "scale(1)",
             cursor: "pointer",
-            minWidth: isMobile ? "auto" : "auto",
+            minWidth: "auto",
           }}
           onMouseEnter={(e) => {
             if (!showHeader) {

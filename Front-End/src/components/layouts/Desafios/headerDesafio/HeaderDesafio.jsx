@@ -1,12 +1,15 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ModalAyuda from '../../Consejos/ModalAyuda.jsx';
+import ModalCalculadora from '../../Calculadora/Calculadora.jsx';
 import "./headerDesafio.css";
 
 export default function HeaderDesafio({ progreso = 100 }) {
   const location = useLocation();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenCalculator, setIsOpenCalculator] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -31,6 +34,7 @@ export default function HeaderDesafio({ progreso = 100 }) {
   return (
     <>
       <ModalAyuda isOpen={isOpen} onClose={closeHelpModal} />
+      <ModalCalculadora isOpen={isOpenCalculator} onClose={() => setIsOpenCalculator(false)} />
 
       <div className="header-desafio">
         <div className="header-desafio-progress">
@@ -51,7 +55,7 @@ export default function HeaderDesafio({ progreso = 100 }) {
             <img src="/icons/Book.png" alt="book" />
           </button>
 
-          <button className="icon-btn" type="button">
+          <button className="icon-btn" type="button" onClick={() => setIsOpenCalculator(true)} title="Abrir calculadora">
             <img src="/icons/Calculator.png" alt="calculadora" />
           </button>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../Desafios/headerDash/HeaderDash';
 import fondoCuadrille from '../../../assets/Fondo_error.png'; 
-import mascotaPlaceholder from '../../../assets/Mascota_perfil.png'; 
+import mascotaPlaceholder from '../../../assets/Foto_perfil.png'; 
 
 function Perfil() {
   // Estado para controlar cuál opción del menú lateral está seleccionada

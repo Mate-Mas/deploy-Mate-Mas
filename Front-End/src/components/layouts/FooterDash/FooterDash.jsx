@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "../../../hooks/useMediaQuery";
 
 const FooterDash = () => {
+    const navigate = useNavigate();
     const isMobile = useMediaQuery("(max-width: 768px)");
     const isTablet = useMediaQuery("(min-width: 769px) and (max-width: 1024px)");
 
@@ -91,8 +93,9 @@ const FooterDash = () => {
                 }}
                 onMouseEnter={(e) => e.currentTarget.style.color = "#52C5FE"}
                 onMouseLeave={(e) => e.currentTarget.style.color = "#1A202C"}
+                onClick={() => navigate('/TermsOfService', { state: { tab: 'privacidad' } })}
                 >
-                    Privacy & Policy
+                    Política de Privacidad
                 </p>
                 <p style={{ 
                     color: "#1A202C", 
@@ -105,8 +108,9 @@ const FooterDash = () => {
                 }}
                 onMouseEnter={(e) => e.currentTarget.style.color = "#52C5FE"}
                 onMouseLeave={(e) => e.currentTarget.style.color = "#1A202C"}
+                onClick={() => navigate('/TermsOfService', { state: { tab: 'terminos' } })}
                 >
-                    Terms & Conditions
+                    Términos y Condiciones
                 </p>
             </div>
         </div>

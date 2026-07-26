@@ -1,0 +1,30 @@
+.mascot-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.mascot-widget > * {
+  pointer-events: auto;
+}
+
+.mascot-widget--bottom-right {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+}
+
+.mascot-widget--bottom-left {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.mascot-widget--bottom-left .speech-bubble {
+  margin-bottom: 40px;
+}
