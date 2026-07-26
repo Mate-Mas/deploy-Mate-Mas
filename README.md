@@ -2,22 +2,24 @@
 
 Una plataforma de entrenamiento para actividades matemáticas de la vida diaria
 
-![imagen identidad](Front-End/src/assets/logo_mate.png)
-
-![imagen identidad](Front-End/src/assets/image.png)
+![Banner](Front-End/src/assets/Visuales_Readme/Banner.png)
+![Lupa](Front-End/src/assets/Visuales_Readme/Lupa.png)
+---
 
 ## Nuestro equipo
 
 <p>
-<img src="Front-End/src/assets/Fotos/Sol.jpg" alt="Sol" width="80">
-<img src="Front-End/src/assets/Fotos/Sofia.jpg" alt="Sofia" width="80">
-<img src="Front-End/src/assets/Fotos/Romina.jpg" alt="Romina" width="80">
-<img src="Front-End/src/assets/Fotos/Lisandro.jpg" alt="Lisandro" width="80">
-<img src="Front-End/src/assets/Fotos/Isaac.jpg" alt="Isaac" width="80">
-<img src="Front-End/src/assets/Fotos/hernan.jpg" alt="Hernán" width="80">
-<img src="Front-End/src/assets/Fotos/Gustavo.jpg" alt="Gustavo" width="80">
-<img src="Front-End/src/assets/Fotos/Flor.jpg" alt="Flor" width="80">
-<img src="Front-End/src/assets/Fotos/Cesar.jpg" alt="César" width="80">
+<img src="Front-End/src/assets/Visuales_Readme/Sol.png" alt="Sol" width="80">
+<img src="Front-End/src/assets/Visuales_Readme/sofi.png" alt="Sofia" width="80">
+<img src="Front-End/src/assets/Visuales_Readme/Romi.png" alt="Romina" width="80">
+<img src="Front-End/src/assets/Visuales_Readme/Lis.png" alt="Lisandro" width="80">
+<img src="Front-End/src/assets/Visuales_Readme/Isaac.png" alt="Isaac" width="80">
+<img src="Front-End/src/assets/Visuales_Readme/Hernan.png" alt="Hernán" width="80">
+<img src="Front-End/src/assets/Visuales_Readme/Gus.png" alt="Gustavo" width="80">
+<img src="Front-End/src/assets/Visuales_Readme/Flor.png" alt="Flor" width="80">
+<img src="Front-End/src/assets/Visuales_Readme/May.png" alt="May" width="80">
+<img src="Front-End/src/assets/Visuales_Readme/Tony.png" alt="Tony" width="80">
+<img src="Front-End/src/assets/Visuales_Readme/Cesar.png" alt="César" width="80">
 </p>
 
 ## Backend Core
@@ -27,6 +29,12 @@ Pre-Beta 1.0 para el Back End del proyecto "Aplicación de aprendizaje de Matem�
 ### Arquitectura
 
 El proyecto se gestiona bajo una estructura de **Monorepo** utilizando `pnpm workspaces`. Esta configuración permite mantener el código del Back-End y del Front-End en un único repositorio "serverless", facilitando la gestión de dependencias compartidas y scripts de automatización desde la raíz del proyecto.
+
+### Modelo de datos
+
+Los archivos ubicados en Back-End/data/*.csv representan el modelo lógico de datos del proyecto.
+Durante el desarrollo pueden editarse directamente para agregar registros o modificar datos iniciales.
+Puede utilizarse Prisma con estos archivos para que, durante el proceso de inicialización, se pueble automáticamente la base PostgreSQL (Supabase), evitando la edición manual desde el panel web.
 
 #### Stack Tecnológico
 
@@ -53,7 +61,7 @@ Se mantiene un seguimiento de las actividades de modificación en la tabla Audit
 
 ### Nodo Administrativo
 
-Consola de relevamiento y actividades administrativas, con acceso desde dirección web [/admin-be](https://deploy-mate-mas-front-end.vercel.app/admin-be) y requerimientos de inicio de sesión para su uso, brinda información relativa al estado y funcionamiento del Back-End, el LLM-CLI y la conexión de datos y también es el punto de acceso para los administradores desde el que pueden manejar condiciones y probar resultados del LLM-CLI, crear, editar buscar o eliminar en las tablas de Secciones y Escenarios y acceder a los gráficos en tiempo real
+Consola de relevamiento y actividades administrativas, con acceso desde dirección web [/ConsolaAdmin](https://deploy-mate-mas-front-end.vercel.app/ConsolaAdmin) y requerimientos de inicio de sesión para su uso, brinda información relativa al estado y funcionamiento del Back-End, el LLM-CLI y la conexión de datos y también es el punto de acceso para los administradores desde el que pueden manejar condiciones y probar resultados del LLM-CLI, crear, editar buscar o eliminar en las tablas de Secciones y Escenarios y acceder a los gráficos de Analisis de Datos en tiempo real.
 
 ### Estructura del Proyecto
 

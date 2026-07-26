@@ -3,6 +3,11 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
+const AUTH_MODE =
+    (import.meta.env.VITE_AUTH_MODE || 'SUPABASE').toUpperCase();
+
+const FORCE_MOCK = AUTH_MODE === 'MOCK';
+
 const isValidConfig = supabaseUrl &&
                      supabaseKey &&
                      !supabaseUrl.includes('[TU_PROYECTO]') &&
@@ -10,11 +15,10 @@ const isValidConfig = supabaseUrl &&
 
 let supabase;
 
-if (isValidConfig) {
+if (!FORCE_MOCK && isValidConfig) {
     console.log('Supabase Client (Front-End): Intentando inicializar con credenciales reales.');
     try {
         supabase = createClient(supabaseUrl, supabaseKey);
-        // Limpieza de seguridad para evitar sesiones "fantasma" del modo mock
         if (localStorage.getItem('supabase.mock.session')) localStorage.removeItem('supabase.mock.session');
     } catch (error) {
         console.error("Error al inicializar Supabase Client:", error);
@@ -22,8 +26,10 @@ if (isValidConfig) {
     }
 }
 
-// Si la configuración no es válida o falló la creación, proporcionamos un objeto mock
-// para evitar errores de referencia y permitir que el AuthContext funcione en modo local.
+if (FORCE_MOCK) {
+    console.log('🧪 AUTH_MODE=MOCK → usando cliente Mock');
+}
+
 if (!supabase) {
     const MOCK_STORAGE_KEY = 'supabase.mock.session';
 

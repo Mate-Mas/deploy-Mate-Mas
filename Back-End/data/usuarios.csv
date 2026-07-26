@@ -19,7 +19,7 @@ user-017,user17@test.com,Esteban Quito,usuario,30,1,User123!,20 a 30 años,mascu
 user-018,user18@test.com,Marta Minujin,usuario,90,4,User123!,+ 50 años,femenino,CABA,Finanzas cotidianas,Relajado,2026-06-08T20:00:00Z
 user-019,user19@test.com,Ricardo Fort,usuario,500,10,User123!,30 a 50 años,masculino,Miami,Porcentajes,Relajado,2026-06-09T08:00:00Z
 user-020,user20@test.com,Juana Viale,usuario,12,1,User123!,20 a 30 años,femenino,CABA,Numeros basicos,Ansioso,2026-06-09T11:00:00Z
-admin-001,elmoteroloco@gmail.com,elmoteroloco,admin,0,0,Admin123!,,,,,,2026-05-20T10:00:00Z
+admin-001,elmoteroloco@gmail.com,Cesar,superadmin,0,0,Admin123!,+ 50 años,Masculino,,Geometría básica,,2026-05-20T10:00:00Z
 admin-002,equip8.innovalab@gmail.com,Equipo 8,admin,0,0,Admin123!,,,,,,2026-05-20T10:00:00Z
 admin-004,casladante@gmail.com,Dante,admin,0,0,Admin123!,,,,,,2026-05-20T10:00:00Z
 admin-005,demian231190@gmail.com,Demian,admin,0,0,Admin123!,,,,,,2026-05-20T10:00:00Z

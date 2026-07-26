@@ -122,7 +122,7 @@ function SecondSection() {
 
       const { mascota } = event.detail;
       setFormData(prev => ({ ...prev, mascota }));
-      setMascotaSeleccionada(true);      
+      setMascotaSeleccionada(true);
     };
 
     window.addEventListener('mascotaSelected', handleMascotaSelected);
@@ -145,16 +145,23 @@ function SecondSection() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const nextStep = () => {
-    // Validación especial para el paso de mascota (ahora paso 4, index 3)
-    if (currentStep === 3 && !mascotaSeleccionada) {
-      return;
-    }
+const nextStep = () => {
+  console.log("CLICK NEXT", {
+    currentStep,
+    desafio: formData.desafio,
+    tiempo: formData.tiempo,
+    edad: formData.edad
+  });
 
-    if (currentStep < stepLabels.length - 1) {
-      setCurrentStep((prev) => prev + 1);
-    }
-  };
+  // Validación especial para el paso de mascota (ahora paso 4, index 3)
+  if (currentStep === 3 && !mascotaSeleccionada) {
+    return;
+  }
+
+  if (currentStep < stepLabels.length - 1) {
+    setCurrentStep((prev) => prev + 1);
+  }
+};
 
   const prevStep = () => {
     if (currentStep > 0) {
@@ -175,7 +182,7 @@ function SecondSection() {
     };
 
     try {
-      await api.post('/api/usuarios/registro', dataToSubmit);
+      await api.post('/usuarios/registro', dataToSubmit);
       setStatus({ loading: false, error: '', success: 'Formulario enviado correctamente.' });
 
       setTimeout(() => {

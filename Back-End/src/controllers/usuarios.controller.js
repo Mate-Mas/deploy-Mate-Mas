@@ -56,16 +56,21 @@ export const loginUsuario = async (req, res, next) => {
             throw ApiError.unauthorized("Credenciales inválidas (email o contraseña incorrectos)");
         }
 
-        res.status(200).json({
-            message: "Login exitoso",
-            user: {
-                id: usuario.id,
-                email: usuario.email,
-                nombre: usuario.nombre,
-                rol: usuario.rol,
-                token: "dev-bypass-token"
-            }
-        });
+res.status(200).json({
+    message: "Login exitoso",
+    user: {
+        id: usuario.id,
+        email: usuario.email,
+        nombre: usuario.nombre,
+        rol: usuario.rol,
+        edad: usuario.edad,
+        genero: usuario.genero,
+        lugar: usuario.lugar,
+        desafio: usuario.desafio,
+        sentimiento: usuario.sentimiento,
+        token: "dev-bypass-token"
+    }
+});
     } catch (error) {
         next(error);
     }

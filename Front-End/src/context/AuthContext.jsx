@@ -2,6 +2,11 @@ import { createContext, useContext, useEffect, useMemo, useState, useCallback, u
 import { supabase } from '../config/supabaseClient';
 import api from '../config/api';
 
+const AUTH_MODE =
+    (import.meta.env.VITE_AUTH_MODE || 'SUPABASE').toUpperCase();
+
+const IS_MOCK = AUTH_MODE === 'MOCK';
+
 const AuthContext = createContext(undefined);
 
 export const AuthProvider = ({ children }) => {
@@ -26,10 +31,16 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    const fetchProfile = useCallback(async (user) => {
+const fetchProfile = useCallback(async (user) => {
+
+    if (IS_MOCK) {
+        console.log("🧪 Omitiendo sincronización con Supabase");
+        return;
+    }
+
         console.log(`🔄 fetchProfile called for user: ${user.id}`);
         if (isFetching.current) return;
-        
+
         isFetching.current = true;
         try {
             const { data } = await api.post('/api/usuarios/registro', {
@@ -135,8 +146,49 @@ export const AuthProvider = ({ children }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [initialized]); // Solo depende de initialized
 
-    const login = useCallback(async (email, password) => {
-        try {
+const login = useCallback(async (email, password) => {
+
+if (IS_MOCK) {
+
+    setLoading(true);
+
+    try {
+
+        console.log("🧪 Login MOCK");
+
+        const response = await api.post('/usuarios/login', {
+            email,
+            password
+        });
+
+        if (response.data) {
+            const mockSession = {
+                user: {
+                    email,
+                    id: response.data.user.id
+                },
+                access_token: response.data.user.token
+            };
+
+            if (supabase.auth._updateMockSession) {
+                supabase.auth._updateMockSession(mockSession);
+            }
+
+            setSession(mockSession);
+            setProfile(response.data.user);
+
+        }
+
+        return response.data;
+
+    } finally {
+
+        setLoading(false);
+
+    }
+}
+
+    try {
             setLoading(true);
             const { data, error } = await supabase.auth.signInWithPassword({ email, password });
             if (error) {
@@ -171,6 +223,47 @@ export const AuthProvider = ({ children }) => {
     }, [fetchProfile]);
 
     const register = useCallback(async (email, password, nombre, extraData = {}) => {
+if (IS_MOCK) {
+
+    setLoading(true);
+
+    try {
+
+        console.log("🧪 Registro MOCK");
+
+        const response = await api.post('/usuarios/registro', {
+            uid: 'mock-' + Date.now(),
+            email,
+            password,
+            nombre,
+            ...extraData
+        });
+
+        if (response.data) {
+
+            const mockSession = {
+                user: {
+                    email,
+                    id: response.data.user?.id || response.data.id || 'local-auth'
+                },
+                access_token: 'local-mock-token'
+            };
+
+            if (supabase.auth._updateMockSession) {
+                supabase.auth._updateMockSession(mockSession);
+            }
+
+            setSession(mockSession);
+        }
+
+        return response.data;
+
+    } finally {
+
+        setLoading(false);
+
+    }
+}
         try {
             const redirectUrl = 'https://matemas.vercel.app/auth/callback';
             setLoading(true);

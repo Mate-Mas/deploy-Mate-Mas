@@ -17,6 +17,10 @@ const api = axios.create({
     timeout: 15000
 });
 
+console.log("MODE:", import.meta.env.MODE);
+console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
+console.log("BASE URL:", api.defaults.baseURL);
+
 api.interceptors.request.use(async (config) => {
     const { data: { session } } = await supabase.auth.getSession();
 

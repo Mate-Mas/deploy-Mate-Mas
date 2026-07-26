@@ -36,8 +36,6 @@
   justify-content: flex-start;
 }
 
-
-
 .onboarding-container header{
   font-size: 32px;
   font-weight: 700;
@@ -242,7 +240,7 @@
   padding: 0 5px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-height: 500px;
 }
 
@@ -371,12 +369,12 @@
   font-weight: 500;
 }
 
-.onboarding-container .status-msg.error { 
-  color: #e74c3c; 
+.onboarding-container .status-msg.error {
+  color: #e74c3c;
 }
 
-.onboarding-container .status-msg.success { 
-  color: #A9A9A9; 
+.onboarding-container .status-msg.success {
+  color: #A9A9A9;
 }
 
 /* ==========================================================================
@@ -387,7 +385,7 @@
   .onboarding-container header {
     font-size: 36px;
   }
-  
+
   .onboarding-container .title2 {
     font-size: 28px;
   }
@@ -400,7 +398,7 @@
     font-size: 20px;
     padding: 15px 14px;
   }
-  
+
   .onboarding-container form .page .field.btns button {
     height: 45px;
     font-size: 18px;
@@ -415,4 +413,6 @@
   .onboarding-container {
     margin: 20px auto;
   }
+
+
 }
