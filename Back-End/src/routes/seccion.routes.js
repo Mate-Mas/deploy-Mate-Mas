@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { getSecciones, getSeccionById, actualizarSeccion, crearSeccion, eliminarSeccion } from '../controllers/seccion.controller.js';
 import {getLeccionesBySeccion, crearLeccion, actualizarLeccion, eliminarLeccion} from "../controllers/leccion.controller.js";
 import { getEscenariosBySeccion, getEscenarioBySeccionAndId, actualizarEscenario, crearEscenario, eliminarEscenario } from '../controllers/escenario.controller.js';
+import { getConsejosByEscenario, crearConsejo, actualizarConsejo, eliminarConsejo} from "../controllers/consejo.controller.js";
 
 const router = Router();
 
