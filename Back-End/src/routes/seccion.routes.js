@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { getSecciones, getSeccionById, actualizarSeccion, crearSeccion, eliminarSeccion } from '../controllers/seccion.controller.js';
+import {getLeccionesBySeccion, crearLeccion, actualizarLeccion, eliminarLeccion} from "../controllers/leccion.controller.js";
 import { getEscenariosBySeccion, getEscenarioBySeccionAndId, actualizarEscenario, crearEscenario, eliminarEscenario } from '../controllers/escenario.controller.js';
 
 const router = Router();
@@ -15,5 +16,10 @@ router.get('/:seccionId/escenarios/:escenarioId', getEscenarioBySeccionAndId);
 router.post('/:seccionId/escenarios', crearEscenario);
 router.put('/:seccionId/escenarios/:escenarioId', actualizarEscenario);
 router.delete('/:seccionId/escenarios/:escenarioId', eliminarEscenario);
+
+router.get("/:seccionId/lecciones", getLeccionesBySeccion);
+router.post("/:seccionId/lecciones", crearLeccion);
+router.put("/:seccionId/lecciones/:leccionId", actualizarLeccion);
+router.delete("/:seccionId/lecciones/:leccionId", eliminarLeccion);
 
 export default router;
