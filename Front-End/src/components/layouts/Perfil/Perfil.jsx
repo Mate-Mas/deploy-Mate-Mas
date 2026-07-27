@@ -1,34 +1,41 @@
 import React, { useState } from 'react';
-import Header from '../Desafios/headerDash/HeaderDash';
-import fondoCuadrille from '../../../assets/Fondo_error.png'; 
-import mascotaPlaceholder from '../../../assets/Foto_perfil.png'; 
+import Header from '../Desafios/headerDash/HeaderDash'; 
+import fondoCuadrille from '../../../assets/fondo_consejo.png';
+import fotoPerfilUser from '../../../assets/Foto_perfil.png'; 
+import enDesarrolloImg from '../../../assets/inventario.png'; 
+import iconInventario from '../../../assets/icono_inventario.png';
+import iconAvatar from '../../../assets/icono_avatar.png';
+import iconMarcos from '../../../assets/icono_marcos.png';
+import iconTitulos from '../../../assets/icono_titulos.png';
+import iconMascotas from '../../../assets/icono_mascota.png';
+
+import './Perfil.css';
 
 function Perfil() {
-  // Estado para controlar cuál opción del menú lateral está seleccionada
-  const [activeTab, setActiveTab] = useState('tu-inventario');
+  const [activeTab, setActiveTab] = useState('marcos');
 
+  // Menú ajustado con las imágenes importadas
   const opcionesMenu = [
-    { id: 'foto-perfil', label: 'Foto Perfil', icon: '👤' },
-    { id: 'tu-inventario', label: 'Tu Inventario', icon: '📦' },
-    { id: 'tienda', label: 'Tienda', icon: '🏪' },
-    { id: 'marcos-avatar', label: 'Marcos de Avatar', icon: '🖼️' },
+    { id: 'inventario', label: 'Inventario', iconImg: iconInventario },
+    { id: 'avatar', label: 'Avatar', iconImg: iconAvatar },
+    { id: 'marcos', label: 'Marcos', iconImg: iconMarcos },
+    { id: 'titulos', label: 'Títulos', iconImg: iconTitulos },
+    { id: 'mascota', label: 'Mascota', iconImg: iconMascotas },
   ];
 
   return (
     <div className="perfil-page-container">
-      {/* Header Dashboard superior */}
       <Header />
 
-      {/* Contenedor principal con fondo cuadriculada */}
       <div 
         className="perfil-main-content"
         style={{ backgroundImage: `url(${fondoCuadrille})` }}
       >
         <div className="perfil-layout-grid">
           
-          {/* BARRA LATERAL AMARILLA */}
+          {/* BARRA LATERAL (SIDEBAR) */}
           <aside className="perfil-sidebar">
-            <h2 className="sidebar-title">Personalizá</h2>
+            <h2 className="sidebar-title">Editar perfil</h2>
             <nav className="sidebar-menu">
               {opcionesMenu.map((opcion) => (
                 <button
@@ -36,47 +43,58 @@ function Perfil() {
                   className={`sidebar-link ${activeTab === opcion.id ? 'is-active' : ''}`}
                   onClick={() => setActiveTab(opcion.id)}
                 >
-                  <span className="sidebar-icon">{opcion.icon}</span>
-                  {opcion.label}
+                  <div className="sidebar-icon-wrapper">
+                    <img src={opcion.iconImg} alt={opcion.label} className="sidebar-icon-img" />
+                  </div>
+                  <span className="sidebar-label-text">{opcion.label}</span>
                 </button>
               ))}
             </nav>
           </aside>
 
-          {/* CONTENIDO DERECHO */}
+          {/* DETALLES DE LA DERECHA */}
           <main className="perfil-details-zone">
-            
-            {/* Título de la Página */}
-            <h1 className="perfil-page-title">Editar tu Perfil</h1>
-
-            {/* Ficha de Información de Usuario (Sin Background) */}
-            <section className="perfil-user-header">
+                             
+            {/* TARJETA CELESTE DE USUARIO */}
+            <section className="perfil-user-card">
               <div className="perfil-avatar-wrapper">
-                {/* Reemplazar con la foto real del usuario */}
-                <div className="perfil-avatar-circle">🐑</div> 
+                <img 
+                  src={fotoPerfilUser} 
+                  alt="Foto de perfil" 
+                  className="perfil-user-avatar-img"
+                />
               </div>
               
               <div className="perfil-user-meta">
                 <h2 className="perfil-username">Paula</h2>
                 <div className="perfil-badge-tag">
-                  As del porcentaje
+                  As de la Suma
                 </div>
               </div>
             </section>
 
-            {/* CUADRADO BLANCO (DINÁMICO EN EL FUTURO) */}
+            {/* TARJETA BLANCA DE CONTENIDO */}
             <section className="perfil-content-card">
-              <div className="placeholder-content">
-                <p className="placeholder-text">
-                  Sección actual: <strong>{opcionesMenu.find(o => o.id === activeTab)?.label}</strong>
-                </p>
+              
+              {/* Título alineado a la izquierda */}
+              <h2 className="content-card-title">
+                {opcionesMenu.find(o => o.id === activeTab)?.label || 'Sección'}
+              </h2>
+
+              {/* Contenido en Desarrollo (Imagen) */}
+              <div className="development-content-wrapper">
                 <img 
-                  src={mascotaPlaceholder} 
-                  alt="Mascota de referencia" 
-                  className="placeholder-mascot-img"
+                  src={enDesarrolloImg} 
+                  alt="Sección en desarrollo" 
+                  className="development-placeholder-img"
                 />
-                <span className="development-tag">Sección en desarrollo</span>
               </div>
+
+              {/* Botón Guardar Cambios */}
+              <button type="button" className="save-profile-btn">
+                Guardar
+              </button>
+
             </section>
 
           </main>

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. ESTILOS BASE Y CONTENEDORES (MOBILE FIRST)
+   1. ESTILOS BASE Y CONTENEDORES
    ========================================================================== */
 .perfil-page-container {
   width: 100%;
@@ -8,6 +8,7 @@
   flex-direction: column;
   background-color: #ffffff;
   font-family: 'Segoe UI', Roboto, sans-serif;
+  margin-top: 4%;
 }
 
 .perfil-main-content {
@@ -16,226 +17,214 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 1rem;
+  padding: 1.5rem;
   box-sizing: border-box;
 }
 
-/* En mobile se ve todo en una sola columna apilada */
 .perfil-layout-grid {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 /* ==========================================================================
-   2. BARRA LATERAL AMARILLA (SIDEBAR)
+   2. BARRA LATERAL (SIDEBAR)
    ========================================================================== */
 .perfil-sidebar {
-  background-color: #ffd447; /* Amarillo base */
-  border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  background-color: #d8f2ff; /* Celeste claro Figma */
+  border-radius: 24px;
+  padding: 2rem 1.2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
 }
 
 .sidebar-title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 800;
   color: #111111;
-  margin: 0 0 1.25rem 0;
-  text-align: center;
+  margin: 0 0 1.5rem 0;
+  padding-left: 0.5rem;
 }
 
 .sidebar-menu {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .sidebar-link {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.9rem;
   background: transparent;
   border: none;
-  padding: 0.85rem 1.2rem;
-  border-radius: 14px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #111111;
+  padding: 0.6rem 0.8rem;
+  border-radius: 16px;
   cursor: pointer;
   text-align: left;
   transition: all 0.2s ease;
 }
 
-/* Hover: Amarillo más oscuro */
 .sidebar-link:hover {
-  background-color: #eab815;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Seleccionado / Activo: Mantiene el color oscuro */
-.sidebar-link.is-active {
-  background-color: #eab815;
+/* Iconos de la lista lateral */
+.sidebar-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.sidebar-icon {
-  font-size: 1.25rem;
+.sidebar-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sidebar-label-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #111111;
+}
+
+/* Subrayado activo estilo Figma */
+.sidebar-link.is-active .sidebar-label-text {
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 /* ==========================================================================
-   3. ZONA DE DETALLES (TEXTOS, METADATOS Y CUADRADO BLANCO)
+   3. COLUMNA DERECHA
    ========================================================================== */
 .perfil-details-zone {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  flex: 1;
 }
 
-.perfil-page-title {
+/* 3.1 TARJETA CELESTE DE USUARIO */
+.perfil-user-card {
+  background-color: #d8f2ff; /* Celeste suave */
+  border-radius: 24px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+}
+
+.perfil-user-avatar-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.perfil-user-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.perfil-username {
   font-size: 1.8rem;
   font-weight: 800;
   color: #111111;
   margin: 0;
 }
 
-/* Ficha del usuario (Transparente sin fondo) */
-.perfil-user-header {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  margin-top: 0.5rem;
-}
-
-.perfil-avatar-circle {
-  width: 75px;
-  height: 75px;
-  background: linear-gradient(135deg, #4ed3a4, #2bb582);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.2rem;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.perfil-user-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.perfil-username {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #111111;
-  margin: 0;
-}
-
-/* Etiqueta degradada de logro */
 .perfil-badge-tag {
-  background: linear-gradient(90deg, #5ac4f5 0%, #ecd352 100%);
+  background: linear-gradient(90deg, #57c5f7 0%, #edd852 100%);
   color: #ffffff;
   font-weight: 700;
   font-size: 0.85rem;
-  padding: 0.4rem 1.2rem;
+  padding: 0.4rem 1.4rem;
   border-radius: 20px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   display: inline-block;
   width: fit-content;
 }
 
-/* Cuadrado Blanco de Contenido */
+/* 3.2 TARJETA BLANCA DE CONTENIDO */
 .perfil-content-card {
   background-color: #ffffff;
   border-radius: 24px;
   padding: 2rem;
-  min-height: 300px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  min-height: 380px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content-card-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111111;
+  margin: 0 0 1rem 0;
+  text-align: left; /* Alineado a la izquierda arriba */
+}
+
+/* ÁREA CENTRAL CON LA IMAGEN EN DESARROLLO */
+.development-content-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem 0;
+  flex: 1;
 }
 
-.placeholder-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+.development-placeholder-img {
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
 }
 
-.placeholder-text {
+/* BOTÓN AMARILLO GUARDAR */
+.save-profile-btn {
+  width: 100%;
+  background-color: #ffd84d; /* Amarillo Figma */
+  border: none;
+  border-radius: 30px;
+  padding: 0.9rem;
   font-size: 1.1rem;
-  color: #4a5568;
-  margin: 0;
-}
-
-.placeholder-mascot-img {
-  max-width: 150px;
-  height: auto;
-  opacity: 0.8;
-}
-
-.development-tag {
-  font-size: 0.85rem;
   font-weight: 700;
-  color: #a0aec0;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  color: #111111;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 1rem;
+}
+
+.save-profile-btn:hover {
+  background-color: #f5cb32;
+}
+
+.save-profile-btn:active {
+  transform: scale(0.99);
 }
 
 /* ==========================================================================
-   4. MEDIA QUERIES (ESCRITORIO / VISTA DE PANTALLA GRANDE)
+   4. MEDIA QUERIES (ESCRITORIO)
    ========================================================================== */
 @media (min-width: 850px) {
-  .perfil-main-content {
-    padding: 2.5rem;
-  }
-
-  /* Cambia a estructura de dos columnas de Figma */
   .perfil-layout-grid {
     flex-direction: row;
-    align-items: flex-start;
-    gap: 2.5rem;
+    align-items: stretch;
+    gap: 2rem;
   }
 
-  /* Columna izquierda fija de Personalización */
   .perfil-sidebar {
-    width: 280px;
-    min-height: 550px; /* Estirado vertical elegante */
-    padding: 2.5rem 1.5rem;
-  }
-
-  .sidebar-title {
-    font-size: 1.75rem;
-    margin-bottom: 2.5rem;
-    text-align: left;
-    padding-left: 1.2rem;
-  }
-
-  /* Columna derecha toma el espacio restante */
-  .perfil-details-zone {
-    flex: 1;
-    gap: 1.5rem;
-  }
-
-  .perfil-page-title {
-    font-size: 2.2rem;
-  }
-
-  .perfil-avatar-circle {
-    width: 100px;
-    height: 100px;
-    font-size: 3rem;
-  }
-
-  .perfil-username {
-    font-size: 2rem;
-  }
-
-  .perfil-content-card {
-    min-height: 400px; /* Cuadro blanco más espacioso en escritorio */
+    width: 290px;
+    flex-shrink: 0;
   }
 }

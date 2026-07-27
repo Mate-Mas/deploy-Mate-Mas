@@ -145,7 +145,7 @@ export default function AppRouter() {
 
         {/* Ruta de desarrollo para previsualizar Onboarding sin autenticación */}
         {import.meta.env.DEV && (
-          <Route path="/dev-onboarding" element={<Onboarding />} />
+          <Route path="/dev-Dashboard" element={<Perfil />} />
         )}
 
         <Route

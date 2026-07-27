@@ -7,6 +7,7 @@ import { useAuth } from '../../../../context/AuthContext';
 import { LuChevronDown, LuChevronUp } from 'react-icons/lu';
 import { useMediaQuery } from '../../../../hooks/useMediaQuery';
 import ButtonFloat from '../../../ui/ButtonFloat/ButtonFloat';
+import fotoPerfilUser from '../../../../assets/Foto_perfil.png'; 
 
 export default function Header({ showHeader, setShowHeader }) {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ export default function Header({ showHeader, setShowHeader }) {
       expanded={expanded}
       onToggle={() => setExpanded(!expanded)}
     >
-      <Container className="d-flex justify-content-between align-items-center px-4">
+      <Container className="d-flex align-items-center px-4" style={{ justifyContent: 'space-between' }}>
         <Navbar.Brand onClick={handleScrollToTop} as={Link} to="/" className="brand">
           <svg width="141" height="30" viewBox="0 0 141 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M51.6178 28.6236C45.6113 27.1228 39.4583 26.9131 33.0924 28.572C31.5517 28.973 29.9361 28.0512 29.6017 26.4955C29.5451 26.2293 29.5268 25.9581 29.5567 25.6902C30.3321 18.6205 32.758 7.17479 38.0374 2.97854C40.8726 0.725678 44.583 0.970265 47.2252 3.48269C50.2767 6.38445 52.1186 11.3694 53.2351 15.6621C54.0903 18.9532 54.7209 22.2027 55.0986 25.5887C55.1635 26.1727 55.052 26.7268 54.8091 27.2076C54.2251 28.369 52.8807 28.938 51.6195 28.6236H51.6178Z" fill="#222227" />
@@ -64,6 +65,15 @@ export default function Header({ showHeader, setShowHeader }) {
 
         <Navbar.Toggle aria-controls="navbar-nav" />
 
+        <Navbar.Collapse id="navbar-nav" className="align-items-center justify-content-center">
+          <Nav className="d-flex align-items-center gap-1 gap-lg-5 py-2 py-lg-0">
+            <Nav.Link onClick={() => navigate("/dashboard")}>Desafíos</Nav.Link>
+            <Nav.Link onClick={() => navigate("/mixto")}>Mixto</Nav.Link>
+            <Nav.Link onClick={() => navigate("/ranking")}>Ranking</Nav.Link>
+            <Nav.Link onClick={() => navigate("/perfil")}>Mi Perfil</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+        
         <div className="hidden md:block d-flex align-items-center gap-2 gap-lg-3">
           <Dropdown align="end">
             <Dropdown.Toggle
@@ -72,7 +82,7 @@ export default function Header({ showHeader, setShowHeader }) {
               className="p-0 border-0"
             >
               <img
-                src="/user.png"
+                src={fotoPerfilUser} 
                 alt="User Avatar"
                 className="rounded-circle"
                 style={{ width: 40, height: 40, objectFit: 'cover' }}
@@ -82,7 +92,7 @@ export default function Header({ showHeader, setShowHeader }) {
             <Dropdown.Menu className="dropdown-menu-custom mt-2 shadow-lg" style={{ minWidth: '220px' }}>
               <Dropdown.Item onClick={handleProfile} className="py-2">
                 <FaUser className="me-2" />
-                Mi Perfil
+                Paula
               </Dropdown.Item>
 
               <Dropdown.Item onClick={handleSettings} className="py-2">
@@ -102,15 +112,6 @@ export default function Header({ showHeader, setShowHeader }) {
             </Dropdown.Menu>
           </Dropdown>
         </div>
-        
-        <Navbar.Collapse id="navbar-nav" className="align-items-center justify-content-center">
-          <Nav className="d-flex align-items-center gap-1 gap-lg-5 py-2 py-lg-0">
-            <Nav.Link onClick={() => navigate("/dashboard")}>Curso</Nav.Link>
-            <Nav.Link onClick={() => navigate("/mixto")}>Mixto</Nav.Link>
-            <Nav.Link onClick={() => navigate("/ranking")}>Ranking</Nav.Link>
-            <Nav.Link onClick={() => navigate("/perfil")}>Mi Perfil</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
         <ButtonFloat
           className="btn btn-primary"
           onClick={toggleHeader}
