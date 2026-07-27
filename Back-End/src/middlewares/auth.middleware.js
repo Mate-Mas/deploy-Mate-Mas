@@ -7,7 +7,6 @@ export const checkAuth = async (req, res, next) => {
 
     const authHeader = req.headers.authorization;
 
-    // Acceso directo por Llave Maestra (para el "pirata informático" del Ministerio)
     const masterKey = process.env.ADMIN_MASTER_KEY;
     if (masterKey && req.query.key === masterKey) {
         req.user = { id: 'master-key-access', email: 'admin@local', rol: 'superadmin' };

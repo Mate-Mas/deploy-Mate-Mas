@@ -181,6 +181,12 @@ const nextStep = () => {
       nombre: `${formData.nombre} ${formData.apellidos}`.trim()
     };
 
+    console.log("DATA TO SUBMIT");
+    console.log(dataToSubmit);
+
+    console.log("USER");
+    console.log(user);
+
     try {
       await api.post('/usuarios/registro', dataToSubmit);
       setStatus({ loading: false, error: '', success: 'Formulario enviado correctamente.' });

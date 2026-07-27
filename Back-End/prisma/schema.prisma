@@ -27,6 +27,8 @@ model Usuario {
   lugar              String?
   desafio            String?
   sentimiento        String?
+  mascota String?
+  tiempo String?
   racha              Int                 @default(0)
   ultimaConexion     DateTime            @default(now())
   progreso           Progreso[]
@@ -76,6 +78,8 @@ model Escenario {
   pregunta    String
   explicacion String?
   categoria   String
+  tipo                String     @default("multiple")
+  respuestaCorrecta   Int?
   seccionId   Int
   seccion     Seccion    @relation(fields: [seccionId], references: [id])
   opciones    Opcion[]

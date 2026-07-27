@@ -161,6 +161,9 @@ if (IS_MOCK) {
             password
         });
 
+        console.log("LOGIN RESPONSE");
+        console.log(response.data.user);
+
         if (response.data) {
             const mockSession = {
                 user: {

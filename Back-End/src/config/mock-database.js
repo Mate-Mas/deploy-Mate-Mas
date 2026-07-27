@@ -34,22 +34,26 @@ const readCSV = (fileName) => {
 const saveUsersToCSV = () => {
     try {
         const filePath = path.join(DATA_PATH, 'usuarios.csv');
-        const headers = 'id,email,nombre,rol,puntos,racha,password,edad,genero,lugar,desafio,sentimiento,createdAt';
+const headers = 'id,email,nombre,rol,puntos,racha,password,edad,genero,lugar,desafio,sentimiento,mascota,tiempo,tokens,ultimaConexion,createdAt';
         const rows = db.usuario.map(u => [
-            u.id,
-            u.email,
-            u.nombre,
-            u.rol,
-            u.puntos || 0,
-            u.racha || 0,
-            u.password,
-            u.edad || '',
-            u.genero || '',
-            u.lugar || '',
-            u.desafio || '',
-            u.sentimiento || '',
-            u.createdAt || new Date().toISOString()
-        ].join(','));
+        u.id,
+        u.email,
+        u.nombre,
+        u.rol,
+        u.puntos || 0,
+        u.racha || 0,
+        u.password,
+        u.edad || '',
+        u.genero || '',
+        u.lugar || '',
+        u.desafio || '',
+        u.sentimiento || '',
+        u.mascota || '',
+        u.tiempo || '',
+        u.tokens || 0,
+        u.ultimaConexion || '',
+        u.createdAt || new Date().toISOString()
+    ].join(','));
         fs.writeFileSync(filePath, headers + '\n' + rows.join('\n'), 'utf-8');
     } catch (e) {
         console.error('❌ Error guardando usuarios.csv:', e);
@@ -57,7 +61,11 @@ const saveUsersToCSV = () => {
 };
 
 let db = {
-    usuario: readCSV('usuarios.csv').map(u => ({ ...u, tokens: 0, ultimaConexion: new Date() })),
+    usuario: readCSV('usuarios.csv').map(u => ({
+        ...u,
+        tokens: u.tokens || 0,
+        ultimaConexion: u.ultimaConexion || new Date().toISOString()
+    })),
     seccion: readCSV('secciones.csv'),
     escenario: readCSV('escenarios.csv'),
     auditoria: readCSV('auditoria.csv'),
@@ -72,12 +80,20 @@ let db = {
 const mockPrisma = {
     $queryRaw: async () => [{ 1: 1 }],
     usuario: {
-        findUnique: async ({ where }) => {
-            const emailSearch = where.email?.toLowerCase();
-            return db.usuario.find(u =>
-                u.id === where.id || u.email?.toLowerCase() === emailSearch
-            );
-        },
+findUnique: async ({ where }) => {
+
+    const emailSearch = where.email?.toLowerCase();
+
+    const usuario = db.usuario.find(u =>
+        u.id === where.id ||
+        u.email?.toLowerCase() === emailSearch
+    );
+
+    console.log("===== FIND UNIQUE =====");
+    console.log(usuario);
+
+    return usuario;
+},
         upsert: async ({ where, create, update }) => {
             const emailSearch = where.email?.toLowerCase() || create.email?.toLowerCase();
             let idx = db.usuario.findIndex(u => u.id === where.id || u.email?.toLowerCase() === emailSearch);
@@ -93,13 +109,13 @@ const mockPrisma = {
             }
             const newUser = {
                 ...create,
-                puntos: 0,
-                tokens: 0,
-                racha: 0,
-                genero: create.genero || 'pendiente',
-                lugar: create.lugar || 'pendiente',
-                createdAt: new Date().toISOString()
-            };
+                    puntos: create.puntos || 0,
+                    tokens: create.tokens || 0,
+                    racha: create.racha || 0,
+                    genero: create.genero || 'pendiente',
+                    lugar: create.lugar || 'pendiente',
+                    createdAt: new Date().toISOString()
+                };
             db.usuario.push(newUser);
             saveUsersToCSV();
             return newUser;

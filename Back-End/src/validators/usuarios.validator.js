@@ -20,7 +20,9 @@ export const registroSchema = z.object({
     genero: z.string().optional(),
     lugar: z.string().optional(),
     desafio: z.string().optional(),
-    sentimiento: z.string().optional()
+    sentimiento: z.string().optional(),
+    mascota: z.string().optional(),
+    tiempo: z.string().optional(),
 });
 
 export const loginSchema = z.object({

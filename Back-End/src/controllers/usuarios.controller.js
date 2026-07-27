@@ -4,14 +4,30 @@ import { registroSchema, perfilSchema, loginSchema } from '../validators/usuario
 
 export const registrarUsuario = async (req, res, next) => {
     try {
+
+        console.log("========== BODY RECIBIDO ==========");
+        console.log(req.body);
+
         const validacion = registroSchema.safeParse(req.body);
 
         if (!validacion.success) {
             throw validacion.error;
         }
 
-        const { email, nombre, password, edad, genero, lugar, desafio, sentimiento } = validacion.data;
-        const uid = req.body.uid;
+    const {
+        email,
+        nombre,
+        password,
+        edad,
+        genero,
+        lugar,
+        desafio,
+        sentimiento,
+        mascota,
+        tiempo
+} = validacion.data;
+
+const uid = req.body.uid;
 
         if (!uid) {
             return res.status(400).json({ error: "Falta UID de autenticación" });
@@ -29,9 +45,35 @@ export const registrarUsuario = async (req, res, next) => {
 
         const usuario = await prisma.usuario.upsert({
             where: { id: uid },
-            update: { nombre, rol: rolAsignado, password, edad, genero, lugar, desafio, sentimiento },
-            create: { id: uid, email, nombre, rol: rolAsignado, password, edad, genero, lugar, desafio, sentimiento }
+            update: {
+        nombre,
+        rol: rolAsignado,
+        password,
+        edad,
+        genero,
+        lugar,
+        desafio,
+        sentimiento,
+        mascota,
+        tiempo
+},
+            create: {
+        id: uid,
+        email,
+        nombre,
+        rol: rolAsignado,
+        password,
+        edad,
+        genero,
+        lugar,
+        desafio,
+        sentimiento,
+        mascota,
+        tiempo
+}
         });
+        console.log("========== USUARIO DEVUELTO POR PRISMA ==========");
+        console.log(usuario);
         console.log(`✅ Usuario sincronizado: ${usuario.email} [${usuario.rol}]`);
         res.status(201).json(usuario);
     } catch (error) {
@@ -40,6 +82,9 @@ export const registrarUsuario = async (req, res, next) => {
 };
 
 export const loginUsuario = async (req, res, next) => {
+
+    console.log("🔥 ESTOY EN loginUsuario");
+
     try {
         const validacion = loginSchema.safeParse(req.body);
         if (!validacion.success) {
@@ -56,6 +101,9 @@ export const loginUsuario = async (req, res, next) => {
             throw ApiError.unauthorized("Credenciales inválidas (email o contraseña incorrectos)");
         }
 
+        console.log("🔥 Usuario antes de responder:");
+        console.log(usuario);
+
 res.status(200).json({
     message: "Login exitoso",
     user: {
@@ -68,6 +116,8 @@ res.status(200).json({
         lugar: usuario.lugar,
         desafio: usuario.desafio,
         sentimiento: usuario.sentimiento,
+        mascota: usuario.mascota,
+        tiempo: usuario.tiempo,
         token: "dev-bypass-token"
     }
 });
@@ -112,6 +162,27 @@ export const getUsuarios = async (req, res, next) => {
     }
 };
 
+export const getPerfil = async (req, res, next) => {
+    try {
+        const usuario = await prisma.usuario.findUnique({
+            where: {
+                id: req.user.id
+            }
+        });
+
+        if (!usuario) {
+            return res.status(404).json({
+                error: "Usuario no encontrado"
+            });
+        }
+
+        return res.status(200).json(usuario);
+
+    } catch (error) {
+        next(error);
+    }
+};
+
 export const actualizarPerfil = async (req, res, next) => {
     try {
         const uid = req.user.id;
@@ -121,15 +192,33 @@ export const actualizarPerfil = async (req, res, next) => {
             throw validacion.error;
         }
 
-        const { nombre } = validacion.data;
+    const {
+        nombre,
+        edad,
+        genero,
+        lugar,
+        desafio,
+        sentimiento,
+        mascota,
+        tiempo
+    } = validacion.data;
+
+
 
         const usuario = await prisma.usuario.update({
             where: {
                 id: uid
             },
             data: {
-                nombre
-            }
+                nombre,
+                edad,
+                genero,
+                lugar,
+                desafio,
+                sentimiento,
+                mascota,
+                tiempo
+}
         });
         return res.status(200).json(usuario);
     } catch (error) {

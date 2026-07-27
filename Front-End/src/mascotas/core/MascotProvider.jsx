@@ -1,6 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useCallback, useContext, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useMemo, useState, useEffect } from 'react';
 import { getRandomDialog } from '../registry';
+import { useAuth } from '../../context/AuthContext';
 
 const MascotContext = createContext(null);
 
@@ -10,6 +11,7 @@ export function MascotProvider({
   defaultState = 'idle',
   autoDismissMs = 5000,
 }) {
+  const { profile } = useAuth();
   const [mascotId, setMascotId] = useState(defaultMascot);
   const [state, setStateInternal] = useState(defaultState);
   const [currentMessage, setCurrentMessage] = useState(null);
@@ -110,6 +112,13 @@ export function MascotProvider({
     setCurrentMessage(null);
     setIsSpeaking(false);
   }, []);
+
+  useEffect(() => {
+    if (profile?.mascota && profile.mascota !== mascotId) {
+      console.log("🐾 Mascota cargada desde perfil:", profile.mascota);
+      setMascotId(profile.mascota);
+    }
+  }, [profile, mascotId]);
 
   const value = useMemo(
     () => ({

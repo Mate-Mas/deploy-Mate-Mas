@@ -3,16 +3,43 @@ import { generarFeedbackPedagogico } from '../services/gemini.service.js';
 
 export const registrarProgreso = async (req, res, next) => {
     const usuarioId = req.user.id;
-    const { escenarioId, opcionId } = req.body;
+    const { escenarioId, opcionId, respuestaUsuario } = req.body;
 
     try {
-        const opcion = await prisma.opcion.findUnique({
-            where: { id: parseInt(opcionId) },
-            include: { escenario: { include: { seccion: true } } }
-        });
+        let escenario;
+        let esCorrecto;
+        let puntosPosibles;
+        let textoRespuestaUsuario;
 
-        if (!opcion || opcion.escenarioId !== parseInt(escenarioId)) {
-            return res.status(404).json({ error: 'Opción no válida' });
+        if (opcionId) {
+            // Ejercicios tipo opcion_multiple: la respuesta correcta vive en Opcion.esCorrecta
+            const opcion = await prisma.opcion.findUnique({
+                where: { id: parseInt(opcionId) },
+                include: { escenario: { include: { seccion: true } } }
+            });
+
+            if (!opcion || opcion.escenarioId !== parseInt(escenarioId)) {
+                return res.status(404).json({ error: 'Opción no válida' });
+            }
+
+            escenario = opcion.escenario;
+            esCorrecto = opcion.puntos > 0;
+            puntosPosibles = opcion.puntos;
+            textoRespuestaUsuario = opcion.texto;
+        } else {
+            // Ejercicios tipo numerico: se compara contra Escenario.respuestaCorrecta
+            escenario = await prisma.escenario.findUnique({
+                where: { id: parseInt(escenarioId) },
+                include: { seccion: true }
+            });
+
+            if (!escenario || escenario.tipo !== 'numerico') {
+                return res.status(400).json({ error: 'Se requiere opcionId, o un escenario de tipo numerico junto con respuestaUsuario' });
+            }
+
+            esCorrecto = Number(respuestaUsuario) === Number(escenario.respuestaCorrecta);
+            puntosPosibles = 10;
+            textoRespuestaUsuario = String(respuestaUsuario);
         }
 
         const usuario = await prisma.usuario.findUnique({
@@ -21,7 +48,6 @@ export const registrarProgreso = async (req, res, next) => {
 
         if (!usuario) return res.status(404).json({ error: 'Usuario no encontrado' });
 
-        const tokensAnteriores = usuario.tokens || 0;
         const ultimaConexionBase = usuario.ultimaConexion ? new Date(usuario.ultimaConexion) : new Date();
         const ahora = new Date();
         const diferenciaDias = Math.floor((ahora - ultimaConexionBase) / (1000 * 60 * 60 * 24));
@@ -30,16 +56,15 @@ export const registrarProgreso = async (req, res, next) => {
             where: { usuarioId, escenarioId: parseInt(escenarioId) }
         });
 
-        const esCorrecto = opcion.puntos > 0;
         const yaEstabaResuelto = progresoExistente?.resuelto || false;
-        const puntosEscenario = (!yaEstabaResuelto && esCorrecto) ? opcion.puntos : 0;
+        const puntosEscenario = (!yaEstabaResuelto && esCorrecto) ? puntosPosibles : 0;
 
-        let feedbackFinal = opcion.escenario.explicacion;
+        let feedbackFinal = escenario.explicacion;
         if (!esCorrecto) {
             feedbackFinal = await generarFeedbackPedagogico(
-                opcion.escenario.pregunta,
-                opcion.escenario.explicacion,
-                opcion.texto
+                escenario.pregunta,
+                escenario.explicacion,
+                textoRespuestaUsuario
             );
         }
 
@@ -80,36 +105,37 @@ export const registrarProgreso = async (req, res, next) => {
         const progresosSeccion = await prisma.progreso.findMany({
             where: {
                 usuarioId,
-                escenario: { seccionId: opcion.escenario.seccionId }
+                escenario: { seccionId: escenario.seccionId }
             }
         });
 
         const puntosActualesSeccion = progresosSeccion.reduce((acc, curr) => acc + curr.puntosObtenidos, 0);
         const escenariosSeccion = await prisma.escenario.findMany({
-            where: { seccionId: opcion.escenario.seccionId },
+            where: { seccionId: escenario.seccionId },
             include: { opciones: true }
         });
 
         const puntosMaximosSeccion = escenariosSeccion.reduce((acc, esc) => {
-            const maxPuntosEscenario = Math.max(...esc.opciones.map(o => o.puntos), 0);
+            const maxPuntosOpciones = esc.opciones.length ? Math.max(...esc.opciones.map(o => o.puntos)) : 0;
+            const maxPuntosEscenario = esc.tipo === 'numerico' ? Math.max(maxPuntosOpciones, 10) : maxPuntosOpciones;
             return acc + maxPuntosEscenario;
         }, 0);
 
-        const umbral = opcion.escenario.seccion?.umbralAprobacion || 0.66;
+        const umbral = escenario.seccion?.umbralAprobacion || 0.66;
         const seccionAprobada = puntosActualesSeccion >= (puntosMaximosSeccion * umbral);
         let ganoTokens = 0;
         let nombreSeccionNuevaAprobada = null;
 
         if (seccionAprobada) {
             const yaAprobada = await prisma.seccionAprobada.findUnique({
-                where: { usuarioId_seccionId: { usuarioId, seccionId: opcion.escenario.seccionId } }
+                where: { usuarioId_seccionId: { usuarioId, seccionId: escenario.seccionId } }
             });
 
             if (!yaAprobada) {
                 await prisma.seccionAprobada.create({
-                    data: { usuarioId, seccionId: opcion.escenario.seccionId }
+                    data: { usuarioId, seccionId: escenario.seccionId }
                 });
-                const seccion = await prisma.seccion.findUnique({ where: { id: opcion.escenario.seccionId } });
+                const seccion = await prisma.seccion.findUnique({ where: { id: escenario.seccionId } });
                 ganoTokens = seccion.puntosRecompensa;
                 nombreSeccionNuevaAprobada = seccion.nombre;
 
@@ -136,6 +162,7 @@ export const registrarProgreso = async (req, res, next) => {
             puntosTotalesAcademicos: usuarioFinal.puntos,
             tokensActuales: usuarioFinal.tokens,
             tokensGanados: ganoTokens,
+            racha: usuarioFinal.racha,
             seccionAprobada: nombreSeccionNuevaAprobada,
             nuevosDesbloqueos: nuevosDesbloqueos.map(s => s.nombre)
         });

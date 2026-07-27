@@ -14,10 +14,23 @@ export function MascotWidget({
   showBubble = true,
   className = '',
 }) {
-  const { mascotId, state, currentMessage, isSpeaking, dismissMessage } = useMascotContext();
-  const config = getMascotConfig(mascotId);
 
-  const positionClass = position !== 'inline' ? `mascot-widget--${position}` : '';
+const { mascotId, state, currentMessage, isSpeaking, dismissMessage } = useMascotContext();
+
+console.log("Mascot ID:", mascotId);
+
+const config = getMascotConfig(mascotId);
+
+console.log("Mascot Config:", config);
+
+// Mientras no haya una mascota válida, no renderizamos el widget.
+if (!config) {
+  return null;
+}
+
+const positionClass = position !== 'inline'
+  ? `mascot-widget--${position}`
+  : '';
 
   return (
     <div className={`mascot-widget ${positionClass} ${className}`}>
