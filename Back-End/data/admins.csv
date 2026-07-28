@@ -1,0 +1,12 @@
+id,email,nombre,rol,puntos,racha,password,edad,genero,lugar,desafio,sentimiento,mascota,tiempo,tokens,ultimaConexion,createdAt
+admin-001,sol@correo.com,Sol,admin,0,0,Admin123!,,,,,,,0,,2026-05-20T10:00:00Z
+admin-002,sofia@correo.com,Sofia,admin,0,0,Admin123!,,,,,,,0,,2026-05-20T10:00:00Z
+admin-003,romina@correo.com,Romina,admin,0,0,Admin123!,,,,,,,0,,2026-05-20T10:00:00Z
+admin-004,lisandro@correo.com,Lisandro,admin,0,0,Admin123!,,,,,,,0,,2026-05-20T10:00:00Z
+admin-005,isaac@correo.com,Isaac,admin,0,0,Admin123!,,,,,,,0,,2026-05-20T10:00:00Z
+admin-006,hernan@correo.com,Hernán,admin,0,0,Admin123!,,,,,,,0,,2026-05-20T10:00:00Z
+admin-007,flor@correo.com,Flor,admin,0,0,Admin123!,,,,,,,0,,2026-05-20T10:00:00Z
+admin-008,may@correo.com,May,admin,0,0,Admin123!,,,,,,,0,,2026-05-20T10:00:00Z
+admin-009,tony@correo.com,Tony,admin,0,0,Admin123!,,,,,,,0,,2026-05-20T10:00:00Z
+superadmin-001,cesar@correo.com,César,superadmin,0,0,Admin123!,,,,,,,0,,2026-05-20T10:00:00Z
+superadmin-002,gustavo@correo.com,Gustavo,superadmin,0,0,Admin123!,,,,,,,0,,2026-05-20T10:00:00Z

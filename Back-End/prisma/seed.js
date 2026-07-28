@@ -1,11 +1,11 @@
-import prisma from '../src/config/prisma.js';
+import { PrismaClient } from '@prisma/client';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
+const prisma = new PrismaClient();
 const readCSV = (fileName) => {
     const filePath = path.join(__dirname, '../data', fileName);
     const content = fs.readFileSync(filePath, 'utf-8');
@@ -61,38 +61,67 @@ async function main() {
         });
     }
 
-    const usuarios = readCSV('usuarios.csv');
-    for (const u of usuarios) {
-        await prisma.usuario.upsert({
-            where: { email: u.email },
-            update: {
-                nombre: u.nombre,
-                rol: u.rol,
-                edad: u.edad || null,
-                genero: u.genero || null,
-                lugar: u.lugar || null,
-                desafio: u.desafio || null,
-                sentimiento: u.sentimiento || null,
-                createdAt: u.createdAt ? new Date(u.createdAt) : new Date()
-            },
-            create: {
-                id: u.id,
-                email: u.email,
-                nombre: u.nombre,
-                rol: u.rol,
-                password: u.password,
-                puntos: parseInt(u.puntos) || 0,
-                tokens: 0,
-                racha: parseInt(u.racha) || 0,
-                edad: u.edad || null,
-                genero: u.genero || null,
-                lugar: u.lugar || null,
-                desafio: u.desafio || null,
-                sentimiento: u.sentimiento || null,
-                createdAt: u.createdAt ? new Date(u.createdAt) : new Date()
-            }
-        });
-    }
+const usuarios = readCSV('usuarios.csv');
+
+for (const u of usuarios) {
+    await prisma.usuario.upsert({
+        where: { email: u.email },
+
+        update: {
+            nombre: u.nombre,
+            rol: u.rol,
+
+            puntos: parseInt(u.puntos) || 0,
+            tokens: parseInt(u.tokens) || 0,
+            racha: parseInt(u.racha) || 0,
+
+            edad: u.edad || null,
+            genero: u.genero || null,
+            lugar: u.lugar || null,
+            desafio: u.desafio || null,
+            sentimiento: u.sentimiento || null,
+            mascota: u.mascota || null,
+            tiempo: u.tiempo || null,
+
+            ultimaConexion: u.ultimaConexion
+                ? new Date(u.ultimaConexion)
+                : new Date(),
+
+            createdAt: u.createdAt
+                ? new Date(u.createdAt)
+                : new Date()
+        },
+
+        create: {
+            id: u.id,
+            email: u.email,
+            nombre: u.nombre,
+            rol: u.rol,
+
+            password: u.password,
+
+            puntos: parseInt(u.puntos) || 0,
+            tokens: parseInt(u.tokens) || 0,
+            racha: parseInt(u.racha) || 0,
+
+            edad: u.edad || null,
+            genero: u.genero || null,
+            lugar: u.lugar || null,
+            desafio: u.desafio || null,
+            sentimiento: u.sentimiento || null,
+            mascota: u.mascota || null,
+            tiempo: u.tiempo || null,
+
+            ultimaConexion: u.ultimaConexion
+                ? new Date(u.ultimaConexion)
+                : new Date(),
+
+            createdAt: u.createdAt
+                ? new Date(u.createdAt)
+                : new Date()
+        }
+    });
+}
 
     console.log('Base de datos poblada con éxito');
 }
