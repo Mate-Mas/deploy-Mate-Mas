@@ -1,0 +1,263 @@
+id,email,nombre,rol,puntos,racha,password,edad,genero,lugar,desafio,sentimiento,mascota,tiempo,tokens,ultimaConexion,createdAt
+user-001,dante.benitez@correo.com,Dante Benitez,usuario,444,24,User123!,29,Prefiero no decirlo,Tandil,Porcentajes,Curioso,suma,+15 minutos,388,2025-12-04T05:13:54,2025-01-12T16:01:32
+user-002,ezequiel.correa@correo.com,Ezequiel Correa,usuario,294,18,User123!,43,Masculino,Campana,Estimulacion cognitiva,Motivado,division,10 minutos,252,2026-05-22T05:13:01,2025-04-13T09:29:53
+user-003,alejandro.fernandez@correo.com,Alejandro Fernandez,usuario,211,11,User123!,24,Masculino,Resistencia,Geometria basica,Relajado,,10 minutos,156,2025-12-28T14:20:40,2025-09-29T23:54:51
+user-004,bruno.perez@correo.com,Bruno Perez,usuario,178,12,User123!,26,Masculino,Tucuman,Numeros basicos,Motivado,,5 minutos,125,2026-06-08T20:39:40,2024-08-23T10:13:10
+user-005,gabriela.lopez@correo.com,Gabriela Lopez,usuario,266,17,User123!,42,Femenino,Posadas,Porcentajes,Ansioso,,+30 minutos,235,2026-06-16T19:44:06,2024-10-02T22:54:06
+user-006,laura.ojeda@correo.com,Laura Ojeda,usuario,267,14,User123!,24,Femenino,Resistencia,Geometria basica,Motivado,geometria,10 minutos,224,2025-11-17T13:53:24,2025-10-30T00:19:07
+user-007,graciela.ruiz@correo.com,Graciela Ruiz,usuario,304,16,User123!,45,Femenino,Zarate,Porcentajes,Concentrado,,,275,2026-07-19T10:49:54,2026-07-16T19:53:50
+user-008,gonzalo.pereira@correo.com,Gonzalo Pereira,usuario,105,8,User123!,41,Masculino,Venado Tuerto,Finanzas cotidianas,Ansioso,geometria,+15 minutos,72,2026-03-12T04:17:15,2025-08-03T23:44:22
+user-009,claudia.sanchez@correo.com,Claudia Sanchez,usuario,439,25,User123!,48,Femenino,Santa Fe,Porcentajes,Motivado,geometria,+30 minutos,340,2025-07-27T01:21:41,2024-11-14T07:34:37
+user-010,martin.martinez@correo.com,Martin Martinez,usuario,320,17,User123!,50,Masculino,Venezuela,Comercio minorista,Motivado,geometria,+15 minutos,275,2026-06-17T05:25:26,2025-04-09T07:28:31
+user-011,sabrina.salazar@correo.com,Sabrina Salazar,usuario,489,26,User123!,75,Prefiero no decirlo,Bahia Blanca,Economia domestica,Confundido,geometria,+15 minutos,403,2026-01-15T10:50:24,2025-10-28T12:49:09
+user-012,elena.leguizamon@correo.com,Elena Leguizamon,usuario,324,17,User123!,44,Femenino,Tandil,Comercio minorista,Concentrado,geometria,10 minutos,252,2026-07-03T08:02:49,2026-05-17T16:54:48
+user-013,antonella.gonzalez@correo.com,Antonella Gonzalez,usuario,177,11,User123!,23,Femenino,Zarate,Numeros basicos,Concentrado,geometria,+15 minutos,137,2026-07-15T00:40:15,2026-06-12T05:11:59
+user-014,lucia.farias@correo.com,Lucia Farias,usuario,445,25,User123!,57,Femenino,Posadas,Finanzas cotidianas,Relajado,,,386,2026-03-29T02:30:26,2025-01-15T10:04:01
+user-015,gonzalo.juarez@correo.com,Gonzalo Juarez,usuario,301,16,User123!,35,Masculino,Mar del Plata,Finanzas cotidianas,Relajado,geometria,10 minutos,248,2025-09-30T12:12:47,2025-02-27T03:15:14
+user-016,antonella.carrizo@correo.com,Antonella Carrizo,usuario,231,13,User123!,45,Femenino,Mercedes,Comercio minorista,Relajado,,5 minutos,175,2024-09-13T02:17:18,2024-07-24T02:34:08
+user-017,candela.caceres@correo.com,Candela Caceres,usuario,83,5,User123!,26,Femenino,Mercedes,Geometria basica,Ansioso,multiplicacion,,75,2025-11-15T09:21:54,2025-10-21T00:38:48
+user-018,juana.sandoval@correo.com,Juana Sandoval,usuario,316,17,User123!,54,Femenino,Reconquista,Economia domestica,Relajado,geometria,5 minutos,262,2026-01-04T05:28:15,2025-07-03T18:24:58
+user-019,gonzalo.marquez@correo.com,Gonzalo Marquez,usuario,176,9,User123!,28,Masculino,Neuquen,Construccion civil,Confundido,geometria,5 minutos,153,2026-05-29T21:39:14,2026-03-13T17:56:12
+user-020,martin.vega@correo.com,Martin Vega,usuario,247,12,User123!,41,Masculino,Rafaela,Porcentajes,Concentrado,,5 minutos,197,2026-06-13T11:15:23,2026-04-08T18:03:59
+user-021,maximiliano.moreno@correo.com,Maximiliano Moreno,usuario,269,15,User123!,50,Masculino,Reconquista,Estimulacion cognitiva,Relajado,,+15 minutos,224,2025-04-06T04:03:24,2024-12-08T02:16:44
+user-022,maria.mansilla@correo.com,Maria Mansilla,usuario,292,14,User123!,27,Femenino,Villa Maria,Construccion civil,Relajado,resta,+15 minutos,224,2025-05-06T05:49:30,2025-03-27T14:51:53
+user-023,alejandro.moreno@correo.com,Alejandro Moreno,usuario,328,17,User123!,50,Masculino,Panama,Economia domestica,Ansioso,,+30 minutos,248,2025-10-31T21:08:09,2025-01-10T01:35:04
+user-024,valentina.medina@correo.com,Valentina Medina,usuario,394,23,User123!,20,Femenino,Gualeguaychu,Geometria basica,Motivado,,10 minutos,332,2026-07-12T11:47:17,2026-07-06T08:58:31
+user-025,graciela.pereira@correo.com,Graciela Pereira,usuario,149,7,User123!,36,Femenino,Santiago del Estero,Finanzas cotidianas,Curioso,suma,5 minutos,139,2026-07-30T01:58:56,2025-07-12T23:21:25
+user-026,luis.ortiz@correo.com,Luis Ortiz,usuario,504,27,User123!,37,Prefiero no decirlo,Tandil,Comercio minorista,Relajado,division,+30 minutos,396,2026-02-16T13:43:32,2024-09-21T19:35:16
+user-027,tomas.sanchez@correo.com,Tomas Sanchez,usuario,123,6,User123!,73,Masculino,Rio Cuarto,Economia domestica,Ansioso,,5 minutos,114,2025-10-04T13:09:16,2024-11-12T13:20:42
+user-028,leonardo.romero@correo.com,Leonardo Romero,usuario,477,28,User123!,39,Prefiero no decirlo,Reconquista,Comercio minorista,Curioso,multiplicacion,,388,2026-07-29T15:36:33,2026-07-27T20:32:57
+user-029,paula.salinas@correo.com,Paula Salinas,usuario,127,8,User123!,29,Femenino,Peru,Construccion civil,Concentrado,resta,+15 minutos,80,2025-10-12T01:09:22,2025-04-30T21:58:44
+user-030,maximiliano.correa@correo.com,Maximiliano Correa,usuario,300,17,User123!,65,Masculino,Santiago del Estero,Economia domestica,Ansioso,,,237,2026-06-30T19:22:35,2026-06-19T04:15:04
+user-031,belen.benitez@correo.com,Belen Benitez,usuario,299,15,User123!,54,Femenino,San Juan,Economia domestica,Ansioso,,5 minutos,253,2026-07-29T18:38:28,2026-07-29T04:11:35
+user-032,laura.gomez@correo.com,Laura Gomez,usuario,326,19,User123!,35,Femenino,San Luis,Finanzas cotidianas,Relajado,,5 minutos,276,2025-11-24T20:15:04,2024-07-25T09:01:03
+user-033,claudia.bustos@correo.com,Claudia Bustos,usuario,130,8,User123!,50,Femenino,Rafaela,Estimulacion cognitiva,Ansioso,division,5 minutos,130,2026-01-21T23:08:52,2025-07-07T20:51:50
+user-034,gabriela.martinez@correo.com,Gabriela Martinez,usuario,261,16,User123!,26,Femenino,Azul,Geometria basica,Concentrado,,,225,2026-03-22T04:00:54,2024-07-20T11:02:52
+user-035,valentina.torres@correo.com,Valentina Torres,usuario,283,14,User123!,57,Femenino,Mexico,Finanzas cotidianas,Motivado,geometria,10 minutos,245,2026-03-07T22:00:50,2024-08-14T20:41:05
+user-036,laura.diaz@correo.com,Laura Diaz,usuario,197,9,User123!,62,Femenino,San Juan,Estimulacion cognitiva,Motivado,multiplicacion,+15 minutos,161,2026-07-25T18:24:18,2026-07-03T23:44:07
+user-037,mateo.gomez@correo.com,Mateo Gomez,usuario,430,23,User123!,24,Masculino,Rio Grande,Comercio minorista,Motivado,geometria,+15 minutos,346,2026-07-20T11:55:59,2026-05-15T23:54:12
+user-038,leonardo.benitez@correo.com,Leonardo Benitez,usuario,298,18,User123!,25,Masculino,La Rioja,Comercio minorista,Concentrado,,+30 minutos,246,2026-07-31T23:13:16,2026-01-04T23:34:10
+user-039,emiliano.medina@correo.com,Emiliano Medina,usuario,240,15,User123!,21,Masculino,Villa Maria,Construccion civil,Concentrado,suma,+15 minutos,195,2025-03-24T14:46:36,2024-12-26T22:55:41
+user-040,jorge.molina@correo.com,Jorge Molina,usuario,292,18,User123!,33,Masculino,Rawson,Porcentajes,Concentrado,multiplicacion,+30 minutos,268,2025-09-09T19:57:22,2024-09-14T09:39:13
+user-041,catalina.villegas@correo.com,Catalina Villegas,usuario,364,19,User123!,34,Femenino,Resistencia,Comercio minorista,Motivado,,+15 minutos,321,2026-01-13T16:28:04,2025-07-31T15:19:39
+user-042,elena.lopez@correo.com,Elena Lopez,usuario,176,11,User123!,66,Femenino,Rafaela,Finanzas cotidianas,Concentrado,,10 minutos,169,2026-03-26T01:34:50,2025-01-27T18:42:24
+user-043,gino.contreras@correo.com,Gino Contreras,usuario,417,24,User123!,25,Masculino,Rafaela,Construccion civil,Relajado,,5 minutos,357,2026-01-29T02:35:24,2025-06-04T07:51:35
+user-044,daniel.martinez@correo.com,Daniel Martinez,usuario,198,12,User123!,45,Masculino,Corrientes,Comercio minorista,Curioso,geometria,+30 minutos,169,2026-01-31T05:49:51,2025-11-05T11:40:19
+user-045,mateo.pereira@correo.com,Mateo Pereira,usuario,186,11,User123!,32,Masculino,Concordia,Comercio minorista,Ansioso,,+30 minutos,146,2026-07-01T07:36:21,2026-06-22T09:11:27
+user-046,florencia.cabrera@correo.com,Florencia Cabrera,usuario,414,23,User123!,45,Femenino,Ushuaia,Finanzas cotidianas,Relajado,resta,5 minutos,353,2026-06-17T20:04:37,2025-01-30T02:55:34
+user-047,martina.vera@correo.com,Martina Vera,usuario,201,13,User123!,28,Femenino,Panama,Porcentajes,Concentrado,multiplicacion,+15 minutos,152,2026-02-05T07:58:28,2026-01-31T20:49:07
+user-048,laura.rojas@correo.com,Laura Rojas,usuario,270,14,User123!,38,Femenino,Peru,Geometria basica,Concentrado,,+15 minutos,247,2025-07-22T04:35:05,2025-05-09T02:14:15
+user-049,lucas.lencina@correo.com,Lucas Lencina,usuario,1,1,User123!,72,Prefiero no decirlo,Azul,Economia domestica,Ansioso,resta,,0,2026-07-03T19:40:44,2026-06-11T05:48:52
+user-050,enzo.duarte@correo.com,Enzo Duarte,usuario,47,3,User123!,50,Masculino,Salta,Finanzas cotidianas,Curioso,geometria,10 minutos,33,2026-03-17T10:47:18,2025-04-16T05:54:48
+user-051,laura.ledesma@correo.com,Laura Ledesma,usuario,249,13,User123!,29,Femenino,Rafaela,Numeros basicos,Ansioso,geometria,,200,2024-08-03T19:36:57,2024-05-05T22:56:03
+user-052,gabriela.ruiz@correo.com,Gabriela Ruiz,usuario,65,2,User123!,49,Femenino,Pergamino,Porcentajes,Ansioso,resta,+15 minutos,55,2026-06-02T07:05:45,2025-08-04T16:40:57
+user-053,thiago.figueroa@correo.com,Thiago Figueroa,usuario,258,15,User123!,50,Prefiero no decirlo,Comodoro Rivadavia,Finanzas cotidianas,Concentrado,multiplicacion,+15 minutos,228,2025-10-06T13:49:23,2024-09-16T06:41:08
+user-054,lucas.maldonado@correo.com,Lucas Maldonado,usuario,183,10,User123!,66,Masculino,General Roca,Economia domestica,Relajado,,,156,2025-09-20T09:27:20,2024-06-23T09:32:47
+user-055,karina.silva@correo.com,Karina Silva,usuario,268,15,User123!,41,Femenino,Nicaragua,Finanzas cotidianas,Curioso,geometria,5 minutos,243,2026-07-10T04:23:39,2025-06-16T23:23:51
+user-056,eduardo.escobar@correo.com,Eduardo Escobar,usuario,240,13,User123!,40,Masculino,Junin,Finanzas cotidianas,Confundido,division,+15 minutos,211,2026-03-13T20:22:49,2024-11-17T07:22:35
+user-057,alejandra.salinas@correo.com,Alejandra Salinas,usuario,0,0,User123!,20,Femenino,Venado Tuerto,Finanzas cotidianas,Relajado,,,0,2025-10-07T07:52:18,2024-09-18T06:01:14
+user-058,bruno.carrizo@correo.com,Bruno Carrizo,usuario,398,21,User123!,30,Masculino,San Nicolas,Geometria basica,Relajado,suma,,348,2026-06-28T15:21:00,2026-05-13T11:22:22
+user-059,leandro.rojas@correo.com,Leandro Rojas,usuario,344,19,User123!,45,Masculino,Posadas,Finanzas cotidianas,Relajado,suma,+15 minutos,288,2026-04-16T16:57:10,2024-11-29T22:51:35
+user-060,ezequiel.chavez@correo.com,Ezequiel Chavez,usuario,252,16,User123!,45,Prefiero no decirlo,Catamarca,Finanzas cotidianas,Motivado,,+15 minutos,224,2026-07-20T21:48:43,2025-03-31T23:11:32
+user-061,claudia.sandoval@correo.com,Claudia Sandoval,usuario,461,27,User123!,37,Prefiero no decirlo,Bariloche,Porcentajes,Motivado,geometria,+15 minutos,384,2025-09-29T13:22:20,2025-07-30T09:43:33
+user-062,pedro.sandoval@correo.com,Pedro Sandoval,usuario,316,16,User123!,24,Prefiero no decirlo,San Nicolas,Numeros basicos,Curioso,geometria,10 minutos,254,2026-04-05T11:43:34,2026-03-21T13:45:11
+user-063,david.quiroga@correo.com,David Quiroga,usuario,232,13,User123!,41,Masculino,Rosario,Construccion civil,Relajado,multiplicacion,5 minutos,204,2025-11-11T05:17:39,2024-12-01T06:57:43
+user-064,ezequiel.leguizamon@correo.com,Ezequiel Leguizamon,usuario,286,16,User123!,31,Masculino,Venado Tuerto,Finanzas cotidianas,Concentrado,geometria,+15 minutos,232,2025-11-28T04:27:28,2025-08-06T23:05:19
+user-065,javier.silva@correo.com,Javier Silva,usuario,264,13,User123!,42,Masculino,Ushuaia,Finanzas cotidianas,Concentrado,,,197,2026-02-14T20:10:44,2026-02-02T20:00:08
+user-066,nicolas.sandoval@correo.com,Nicolas Sandoval,usuario,412,23,User123!,22,Masculino,Colombia,Finanzas cotidianas,Motivado,,+30 minutos,329,2026-06-23T09:31:30,2025-10-06T05:00:47
+user-067,marcos.lencina@correo.com,Marcos Lencina,usuario,54,3,User123!,27,Masculino,Zarate,Geometria basica,Confundido,geometria,,55,2026-03-23T01:46:54,2025-07-06T04:16:26
+user-068,lucas.ramirez@correo.com,Lucas Ramirez,usuario,220,14,User123!,40,Masculino,Catamarca,Finanzas cotidianas,Confundido,geometria,10 minutos,192,2026-02-06T02:47:14,2024-11-18T20:11:21
+user-069,gabriela.maldonado@correo.com,Gabriela Maldonado,usuario,123,6,User123!,26,Femenino,San Rafael,Numeros basicos,Confundido,multiplicacion,,127,2025-03-12T18:34:28,2024-08-16T01:34:51
+user-070,sol.maldonado@correo.com,Sol Maldonado,usuario,384,20,User123!,49,Prefiero no decirlo,San Luis,Finanzas cotidianas,Concentrado,,,345,2026-07-31T16:45:11,2026-07-31T00:44:19
+user-071,marcela.vera@correo.com,Marcela Vera,usuario,22,1,User123!,49,Femenino,Olavarria,Porcentajes,Curioso,multiplicacion,5 minutos,13,2026-02-24T23:01:52,2025-07-09T12:17:58
+user-072,daniela.mansilla@correo.com,Daniela Mansilla,usuario,268,17,User123!,32,Femenino,Santa Fe,Finanzas cotidianas,Relajado,resta,,206,2025-10-27T01:49:41,2025-10-15T21:40:11
+user-073,matias.lencina@correo.com,Matias Lencina,usuario,291,18,User123!,36,Masculino,Santa Fe,Porcentajes,Motivado,geometria,,218,2025-11-18T12:32:38,2024-06-20T21:56:36
+user-074,federico.perez@correo.com,Federico Perez,usuario,217,13,User123!,22,Masculino,Rio Grande,Construccion civil,Motivado,resta,10 minutos,180,2026-05-29T15:23:05,2025-08-03T02:59:04
+user-075,delfina.zarate@correo.com,Delfina Zarate,usuario,267,13,User123!,30,Femenino,Reconquista,Geometria basica,Concentrado,,+15 minutos,214,2026-07-14T17:17:37,2026-06-21T18:49:55
+user-076,victoria.bustos@correo.com,Victoria Bustos,usuario,341,20,User123!,72,Femenino,Comodoro Rivadavia,Estimulacion cognitiva,Concentrado,resta,+15 minutos,279,2026-03-03T22:58:31,2024-05-14T04:14:52
+user-077,ian.medina@correo.com,Ian Medina,usuario,350,20,User123!,27,Masculino,Bahia Blanca,Geometria basica,Motivado,multiplicacion,+30 minutos,299,2025-10-28T10:19:16,2025-08-27T12:52:34
+user-078,laura.juarez@correo.com,Laura Juarez,usuario,233,13,User123!,25,Femenino,Resistencia,Finanzas cotidianas,Curioso,division,10 minutos,187,2026-04-19T03:14:43,2024-05-05T21:15:06
+user-079,candela.zuniga@correo.com,Candela Zuniga,usuario,106,8,User123!,29,Femenino,Pergamino,Comercio minorista,Confundido,,+15 minutos,106,2026-05-16T05:23:21,2025-08-21T10:09:31
+user-080,rosa.zappia@correo.com,Rosa Zappia,usuario,430,23,User123!,37,Prefiero no decirlo,Campana,Comercio minorista,Concentrado,division,+15 minutos,349,2024-11-05T10:44:37,2024-07-31T02:28:41
+user-081,sofia.ledesma@correo.com,Sofia Ledesma,usuario,0,0,User123!,46,Femenino,Zarate,Finanzas cotidianas,Ansioso,geometria,,14,2026-07-04T08:44:41,2025-04-21T09:02:22
+user-082,lucia.vega@correo.com,Lucia Vega,usuario,219,10,User123!,25,Femenino,Mexico,Numeros basicos,Relajado,division,+15 minutos,177,2026-06-29T01:30:58,2025-08-12T01:46:27
+user-083,jose.contreras@correo.com,Jose Contreras,usuario,300,18,User123!,46,Prefiero no decirlo,Villa Carlos Paz,Porcentajes,Motivado,,+15 minutos,232,2026-06-14T00:12:30,2025-09-10T22:50:48
+user-084,jose.vazquez@correo.com,Jose Vazquez,usuario,294,15,User123!,52,Masculino,San Nicolas,Estimulacion cognitiva,Relajado,resta,10 minutos,228,2026-01-16T00:56:35,2024-05-23T07:58:23
+user-085,maximiliano.carrizo@correo.com,Maximiliano Carrizo,usuario,487,27,User123!,58,Masculino,Reconquista,Economia domestica,Concentrado,resta,+30 minutos,419,2026-07-24T18:47:25,2025-11-14T14:09:17
+user-086,gino.mansilla@correo.com,Gino Mansilla,usuario,256,14,User123!,47,Masculino,Corrientes,Construccion civil,Ansioso,,,206,2025-06-20T19:43:55,2024-12-03T21:19:00
+user-087,david.galiano@correo.com,David Galiano,usuario,305,16,User123!,74,Masculino,Resistencia,Economia domestica,Confundido,,,230,2026-03-27T23:30:26,2024-06-25T09:37:06
+user-088,maria.herrera@correo.com,Maria Herrera,usuario,374,23,User123!,72,Femenino,Nicaragua,Finanzas cotidianas,Concentrado,geometria,10 minutos,310,2026-02-07T11:08:05,2025-09-22T11:18:04
+user-089,emiliano.luna@correo.com,Emiliano Luna,usuario,172,8,User123!,59,Masculino,Olavarria,Estimulacion cognitiva,Concentrado,,+15 minutos,138,2025-12-03T10:54:09,2025-02-03T08:30:51
+user-090,pedro.bustos@correo.com,Pedro Bustos,usuario,300,18,User123!,35,Masculino,Comodoro Rivadavia,Estimulacion cognitiva,Motivado,suma,+30 minutos,237,2026-06-25T01:39:48,2026-06-11T07:12:43
+user-091,pablo.zappia@correo.com,Pablo Zappia,usuario,334,20,User123!,26,Masculino,Zarate,Geometria basica,Motivado,,,273,2026-04-07T01:19:19,2025-10-04T07:12:34
+user-092,facundo.gomez@correo.com,Facundo Gomez,usuario,560,30,User123!,31,Prefiero no decirlo,Salta,Porcentajes,Relajado,geometria,+15 minutos,469,2026-07-01T10:35:38,2026-06-26T16:25:05
+user-093,santiago.dominguez@correo.com,Santiago Dominguez,usuario,288,14,User123!,68,Masculino,Pergamino,Economia domestica,Ansioso,resta,,215,2025-11-28T13:49:23,2024-08-27T04:28:27
+user-094,hernan.ojeda@correo.com,Hernan Ojeda,usuario,265,14,User123!,35,Masculino,Villa Maria,Porcentajes,Relajado,division,5 minutos,209,2026-07-14T11:02:45,2025-08-28T14:08:50
+user-095,alejandro.farias@correo.com,Alejandro Farias,usuario,301,17,User123!,31,Masculino,Reconquista,Finanzas cotidianas,Concentrado,,,263,2024-11-03T20:06:07,2024-07-09T06:33:16
+user-096,micaela.rojas@correo.com,Micaela Rojas,usuario,344,17,User123!,27,Femenino,Corrientes,Comercio minorista,Relajado,,+15 minutos,305,2026-07-21T18:39:03,2026-04-20T12:57:04
+user-097,diego.contreras@correo.com,Diego Contreras,usuario,135,9,User123!,20,Masculino,Necochea,Construccion civil,Curioso,division,,129,2026-07-27T04:30:46,2026-06-11T08:23:09
+user-098,sol.ledesma@correo.com,Sol Ledesma,usuario,173,8,User123!,24,Prefiero no decirlo,Bolivia,Porcentajes,Ansioso,geometria,,147,2026-03-01T03:34:28,2026-02-10T06:16:57
+user-099,cristina.diaz@correo.com,Cristina Diaz,usuario,333,17,User123!,41,Femenino,Catamarca,Finanzas cotidianas,Curioso,geometria,10 minutos,271,2026-07-17T07:39:02,2026-07-12T07:52:51
+user-100,sabrina.ramirez@correo.com,Sabrina Ramirez,usuario,57,4,User123!,35,Femenino,Bariloche,Comercio minorista,Ansioso,geometria,+15 minutos,71,2026-05-09T11:52:53,2025-07-14T07:55:34
+user-101,paula.aguirre@correo.com,Paula Aguirre,usuario,46,3,User123!,39,Femenino,Rio Cuarto,Construccion civil,Curioso,geometria,5 minutos,38,2026-05-06T14:47:37,2024-12-25T15:58:12
+user-102,martina.delgado@correo.com,Martina Delgado,usuario,345,19,User123!,37,Femenino,Rawson,Numeros basicos,Confundido,geometria,+30 minutos,302,2026-01-02T05:38:36,2024-09-29T22:08:34
+user-103,hernan.bustos@correo.com,Hernan Bustos,usuario,41,3,User123!,40,Masculino,Rio Cuarto,Finanzas cotidianas,Ansioso,suma,5 minutos,41,2025-12-23T17:25:48,2025-10-24T08:08:18
+user-104,pedro.acosta@correo.com,Pedro Acosta,usuario,361,19,User123!,44,Masculino,La Rioja,Finanzas cotidianas,Relajado,suma,+15 minutos,297,2026-06-24T06:27:11,2026-04-22T17:25:37
+user-105,agustina.ledesma@correo.com,Agustina Ledesma,usuario,419,25,User123!,37,Femenino,Jujuy,Economia domestica,Concentrado,multiplicacion,5 minutos,331,2024-05-22T06:41:19,2024-05-10T00:26:27
+user-106,emiliano.maldonado@correo.com,Emiliano Maldonado,usuario,150,9,User123!,26,Masculino,San Rafael,Porcentajes,Motivado,resta,+15 minutos,108,2026-06-09T16:45:36,2026-03-29T17:56:12
+user-107,marcos.escobar@correo.com,Marcos Escobar,usuario,398,20,User123!,37,Masculino,Rawson,Porcentajes,Motivado,multiplicacion,5 minutos,343,2026-05-23T22:11:58,2025-10-27T22:00:08
+user-108,lucas.maldonado2@correo.com,Lucas Maldonado,usuario,23,2,User123!,45,Masculino,Salta,Estimulacion cognitiva,Curioso,geometria,+30 minutos,4,2025-12-16T05:36:03,2025-01-29T15:33:49
+user-109,karina.alvarez@correo.com,Karina Alvarez,usuario,114,5,User123!,23,Femenino,Colombia,Comercio minorista,Ansioso,division,,117,2026-05-14T00:49:15,2025-04-03T01:35:41
+user-110,esteban.ortiz@correo.com,Esteban Ortiz,usuario,205,10,User123!,21,Masculino,Mendoza,Finanzas cotidianas,Concentrado,suma,10 minutos,147,2026-02-12T14:01:24,2024-08-09T11:10:53
+user-111,tomas.villalba@correo.com,Tomas Villalba,usuario,191,10,User123!,42,Masculino,Bariloche,Comercio minorista,Motivado,suma,+30 minutos,137,2025-11-23T20:37:01,2024-07-02T18:00:56
+user-112,antonella.cabrera@correo.com,Antonella Cabrera,usuario,220,12,User123!,36,Femenino,Resistencia,Finanzas cotidianas,Ansioso,geometria,+30 minutos,160,2025-12-18T20:06:05,2025-10-22T15:10:05
+user-113,ignacio.gareca@correo.com,Ignacio Gareca,usuario,237,15,User123!,73,Masculino,Resistencia,Economia domestica,Motivado,,,212,2026-07-26T01:29:08,2026-05-28T18:19:39
+user-114,ramiro.ruiz@correo.com,Ramiro Ruiz,usuario,257,15,User123!,41,Masculino,Colombia,Comercio minorista,Curioso,suma,+15 minutos,196,2026-05-28T05:52:28,2025-08-13T23:58:55
+user-115,camila.zarate@correo.com,Camila Zarate,usuario,123,9,User123!,61,Prefiero no decirlo,Colombia,Economia domestica,Motivado,,+15 minutos,117,2026-03-19T01:28:32,2026-03-09T04:55:50
+user-116,joaquin.moreno@correo.com,Joaquin Moreno,usuario,223,12,User123!,26,Masculino,Venado Tuerto,Construccion civil,Concentrado,resta,+15 minutos,164,2025-08-10T15:44:13,2024-05-13T02:35:28
+user-117,lujan.ortiz@correo.com,Lujan Ortiz,usuario,515,30,User123!,33,Femenino,La Rioja,Porcentajes,Curioso,suma,+15 minutos,441,2025-10-21T00:33:08,2024-06-21T11:53:10
+user-118,nicolas.lopez@correo.com,Nicolas Lopez,usuario,325,17,User123!,35,Prefiero no decirlo,San Juan,Numeros basicos,Relajado,resta,,258,2025-09-24T00:46:16,2024-09-04T16:44:00
+user-119,bruno.galiano@correo.com,Bruno Galiano,usuario,413,21,User123!,25,Prefiero no decirlo,Buenos Aires,Construccion civil,Concentrado,multiplicacion,+15 minutos,320,2025-09-28T18:27:15,2024-05-04T13:44:11
+user-120,jorge.silva@correo.com,Jorge Silva,usuario,332,19,User123!,57,Masculino,Ecuador,Estimulacion cognitiva,Relajado,geometria,+30 minutos,277,2026-01-17T14:39:05,2024-12-27T23:00:26
+user-121,natalia.lopez@correo.com,Natalia Lopez,usuario,169,11,User123!,38,Femenino,Azul,Finanzas cotidianas,Ansioso,multiplicacion,+15 minutos,147,2026-06-03T10:29:30,2025-12-12T08:13:43
+user-122,ramiro.villalba@correo.com,Ramiro Villalba,usuario,337,20,User123!,34,Masculino,Jujuy,Porcentajes,Confundido,suma,5 minutos,288,2026-05-08T17:33:56,2024-12-30T15:42:04
+user-123,marcela.ponce@correo.com,Marcela Ponce,usuario,237,13,User123!,34,Femenino,Neuquen,Finanzas cotidianas,Motivado,geometria,,219,2025-03-22T14:51:55,2025-03-17T13:26:20
+user-124,gonzalo.vega@correo.com,Gonzalo Vega,usuario,391,21,User123!,59,Masculino,Necochea,Economia domestica,Motivado,suma,+15 minutos,346,2025-02-27T15:10:18,2024-07-19T17:31:03
+user-125,mateo.diaz@correo.com,Mateo Diaz,usuario,294,18,User123!,50,Masculino,Tandil,Geometria basica,Relajado,,+15 minutos,227,2025-02-04T17:52:48,2024-06-22T18:07:19
+user-126,marcela.vega@correo.com,Marcela Vega,usuario,324,16,User123!,25,Prefiero no decirlo,Mendoza,Numeros basicos,Ansioso,,,292,2025-05-17T09:08:10,2025-03-02T04:53:07
+user-127,valentin.cardozo@correo.com,Valentin Cardozo,usuario,132,8,User123!,24,Masculino,Rawson,Porcentajes,Motivado,,10 minutos,93,2026-07-30T18:33:09,2026-07-04T19:35:58
+user-128,lucas.zappia@correo.com,Lucas Zappia,usuario,208,13,User123!,40,Masculino,San Luis,Geometria basica,Motivado,division,+15 minutos,163,2026-01-04T07:59:48,2025-06-23T18:57:21
+user-129,beatriz.lencina@correo.com,Beatriz Lencina,usuario,302,16,User123!,27,Prefiero no decirlo,San Rafael,Porcentajes,Ansioso,resta,,235,2025-06-04T11:59:12,2024-09-07T09:50:32
+user-130,catalina.cardozo@correo.com,Catalina Cardozo,usuario,405,23,User123!,56,Femenino,Nicaragua,Estimulacion cognitiva,Concentrado,geometria,+30 minutos,353,2026-04-27T14:06:45,2025-09-30T14:39:26
+user-131,facundo.medina@correo.com,Facundo Medina,usuario,276,14,User123!,41,Masculino,Nicaragua,Finanzas cotidianas,Motivado,multiplicacion,,206,2026-07-17T18:19:07,2026-07-13T17:20:31
+user-132,gabriela.quiroga@correo.com,Gabriela Quiroga,usuario,213,12,User123!,34,Femenino,Gualeguaychu,Numeros basicos,Motivado,geometria,+15 minutos,190,2025-11-22T20:48:00,2025-10-12T12:43:47
+user-133,candela.gareca@correo.com,Candela Gareca,usuario,263,15,User123!,42,Femenino,Tucuman,Comercio minorista,Curioso,division,+15 minutos,225,2026-06-28T06:00:02,2025-01-17T05:15:18
+user-134,rocio.lopez@correo.com,Rocio Lopez,usuario,314,18,User123!,32,Femenino,Concordia,Comercio minorista,Concentrado,suma,5 minutos,269,2026-05-18T17:18:16,2025-10-09T06:57:41
+user-135,agustin.paz@correo.com,Agustin Paz,usuario,451,23,User123!,48,Masculino,Zarate,Porcentajes,Relajado,suma,10 minutos,359,2025-07-08T01:38:02,2025-02-19T04:57:06
+user-136,victoria.caceres@correo.com,Victoria Caceres,usuario,122,8,User123!,22,Femenino,Tucuman,Geometria basica,Confundido,,+30 minutos,119,2025-07-10T18:37:24,2024-11-16T18:51:13
+user-137,belen.galiano@correo.com,Belen Galiano,usuario,364,19,User123!,22,Femenino,Santa Fe,Geometria basica,Motivado,suma,10 minutos,290,2025-06-01T17:29:46,2024-09-24T00:11:41
+user-138,thiago.gareca@correo.com,Thiago Gareca,usuario,67,5,User123!,24,Masculino,Campana,Numeros basicos,Ansioso,geometria,,76,2026-07-27T06:50:11,2026-07-09T14:47:54
+user-139,jose.lopez@correo.com,Jose Lopez,usuario,407,23,User123!,34,Masculino,Jujuy,Finanzas cotidianas,Relajado,,,342,2026-04-29T04:38:50,2026-03-18T08:44:18
+user-140,rocio.torres@correo.com,Rocio Torres,usuario,331,20,User123!,23,Femenino,Rafaela,Numeros basicos,Motivado,,+15 minutos,286,2026-07-29T19:22:56,2024-05-22T00:48:09
+user-141,franco.rodriguez@correo.com,Franco Rodriguez,usuario,149,9,User123!,23,Masculino,Reconquista,Construccion civil,Ansioso,multiplicacion,+30 minutos,121,2026-02-23T18:55:01,2025-05-02T11:18:50
+user-142,esteban.ledesma@correo.com,Esteban Ledesma,usuario,214,11,User123!,48,Masculino,San Nicolas,Comercio minorista,Ansioso,,+15 minutos,173,2026-05-31T09:05:40,2026-03-13T08:11:46
+user-143,ezequiel.castillo@correo.com,Ezequiel Castillo,usuario,161,10,User123!,49,Masculino,Buenos Aires,Finanzas cotidianas,Curioso,multiplicacion,,118,2026-05-28T02:30:49,2026-05-22T23:13:26
+user-144,ezequiel.meza@correo.com,Ezequiel Meza,usuario,234,13,User123!,65,Prefiero no decirlo,Mar del Plata,Economia domestica,Relajado,geometria,,177,2025-11-10T13:44:42,2025-02-10T04:44:35
+user-145,luis.castillo@correo.com,Luis Castillo,usuario,289,17,User123!,30,Masculino,Parana,Comercio minorista,Motivado,resta,,257,2026-03-02T17:29:00,2024-06-22T04:44:47
+user-146,maximiliano.benitez@correo.com,Maximiliano Benitez,usuario,402,22,User123!,70,Masculino,Concordia,Economia domestica,Confundido,multiplicacion,5 minutos,350,2026-06-29T03:28:53,2026-06-23T19:46:04
+user-147,dante.herrera@correo.com,Dante Herrera,usuario,20,3,User123!,57,Masculino,San Nicolas,Estimulacion cognitiva,Motivado,suma,5 minutos,0,2025-05-24T09:54:12,2024-08-23T00:25:37
+user-148,candela.sanchez@correo.com,Candela Sanchez,usuario,15,2,User123!,24,Femenino,Rawson,Numeros basicos,Ansioso,multiplicacion,5 minutos,30,2025-08-29T21:53:09,2024-12-26T23:48:49
+user-149,belen.herrera@correo.com,Belen Herrera,usuario,236,13,User123!,24,Femenino,Junin,Construccion civil,Relajado,multiplicacion,+30 minutos,215,2026-05-18T02:28:39,2025-09-16T19:54:47
+user-150,candela.sosa@correo.com,Candela Sosa,usuario,408,22,User123!,42,Femenino,Rawson,Economia domestica,Motivado,,+30 minutos,333,2025-08-29T01:26:37,2024-10-11T16:03:54
+user-151,matias.ponce@correo.com,Matias Ponce,usuario,157,9,User123!,34,Masculino,Villa Maria,Finanzas cotidianas,Motivado,geometria,,108,2026-07-14T10:49:25,2026-07-10T04:41:06
+user-152,agustina.rodriguez@correo.com,Agustina Rodriguez,usuario,14,2,User123!,57,Femenino,La Plata,Economia domestica,Ansioso,division,+15 minutos,0,2026-02-02T20:57:01,2024-10-02T12:16:29
+user-153,zoe.rojas@correo.com,Zoe Rojas,usuario,355,19,User123!,35,Femenino,Concordia,Economia domestica,Motivado,,10 minutos,311,2025-10-01T05:38:17,2024-06-09T04:41:11
+user-154,franco.sanchez@correo.com,Franco Sanchez,usuario,99,7,User123!,35,Masculino,Mendoza,Comercio minorista,Motivado,,,106,2026-03-01T02:06:58,2024-06-12T20:09:35
+user-155,guillermo.perez@correo.com,Guillermo Perez,usuario,351,20,User123!,44,Masculino,Guatemala,Numeros basicos,Relajado,division,,274,2024-08-30T09:53:02,2024-07-25T11:09:42
+user-156,ramiro.ojeda@correo.com,Ramiro Ojeda,usuario,227,12,User123!,22,Masculino,Posadas,Construccion civil,Concentrado,,10 minutos,172,2025-04-26T23:25:28,2024-05-22T15:55:53
+user-157,candela.rodriguez@correo.com,Candela Rodriguez,usuario,248,13,User123!,25,Prefiero no decirlo,Trelew,Construccion civil,Confundido,multiplicacion,,182,2026-05-23T20:11:27,2025-11-14T10:02:03
+user-158,joaquin.fernandez@correo.com,Joaquin Fernandez,usuario,153,7,User123!,69,Masculino,Uruguay,Economia domestica,Ansioso,division,+15 minutos,108,2026-06-08T01:33:07,2025-09-19T23:17:58
+user-159,mateo.ortiz@correo.com,Mateo Ortiz,usuario,156,9,User123!,67,Masculino,Mercedes,Estimulacion cognitiva,Motivado,division,,149,2026-07-25T14:57:05,2026-05-05T08:33:44
+user-160,franco.juarez@correo.com,Franco Juarez,usuario,159,11,User123!,22,Masculino,Mendoza,Geometria basica,Motivado,resta,+30 minutos,155,2025-06-26T17:50:59,2025-01-14T22:25:34
+user-161,alejandro.martinez@correo.com,Alejandro Martinez,usuario,127,5,User123!,51,Masculino,Ushuaia,Estimulacion cognitiva,Confundido,,5 minutos,104,2026-07-11T14:06:17,2024-06-11T07:07:28
+user-162,mateo.martinez@correo.com,Mateo Martinez,usuario,210,12,User123!,40,Masculino,La Rioja,Finanzas cotidianas,Confundido,multiplicacion,10 minutos,174,2026-02-11T10:28:23,2025-12-12T17:32:50
+user-163,belen.ruiz@correo.com,Belen Ruiz,usuario,151,9,User123!,35,Femenino,Rio Cuarto,Porcentajes,Confundido,multiplicacion,+30 minutos,144,2024-10-20T12:24:21,2024-06-29T03:15:44
+user-164,rocio.carrizo@correo.com,Rocio Carrizo,usuario,242,14,User123!,45,Femenino,San Juan,Comercio minorista,Confundido,,,201,2025-08-17T18:49:33,2024-12-24T05:21:03
+user-165,victoria.godoy@correo.com,Victoria Godoy,usuario,465,28,User123!,46,Femenino,Bolivia,Finanzas cotidianas,Motivado,suma,5 minutos,392,2026-06-26T14:25:04,2025-10-18T04:46:14
+user-166,lucas.farias@correo.com,Lucas Farias,usuario,30,0,User123!,21,Prefiero no decirlo,La Plata,Numeros basicos,Ansioso,geometria,+15 minutos,13,2024-12-07T07:08:19,2024-09-01T16:16:18
+user-167,juana.vera@correo.com,Juana Vera,usuario,180,10,User123!,29,Femenino,Salta,Geometria basica,Ansioso,geometria,5 minutos,145,2026-07-05T14:24:04,2026-07-05T14:10:50
+user-168,lucas.luna@correo.com,Lucas Luna,usuario,243,12,User123!,46,Masculino,Mar del Plata,Comercio minorista,Relajado,resta,,227,2026-04-06T10:57:18,2025-05-16T01:55:15
+user-169,thiago.rodriguez@correo.com,Thiago Rodriguez,usuario,230,15,User123!,55,Masculino,Rawson,Estimulacion cognitiva,Concentrado,multiplicacion,+30 minutos,174,2026-04-29T05:10:56,2025-09-12T22:32:40
+user-170,juan.molina@correo.com,Juan Molina,usuario,374,22,User123!,65,Masculino,San Luis,Estimulacion cognitiva,Relajado,division,,332,2025-06-10T06:13:08,2024-09-12T03:53:48
+user-171,rodrigo.silva@correo.com,Rodrigo Silva,usuario,482,26,User123!,63,Masculino,Bariloche,Estimulacion cognitiva,Motivado,division,,402,2026-06-11T11:45:00,2026-06-08T09:32:58
+user-172,lujan.herrera@correo.com,Lujan Herrera,usuario,304,19,User123!,31,Femenino,Republica Dominicana,Porcentajes,Motivado,suma,,254,2026-07-09T15:22:52,2026-06-14T05:16:26
+user-173,diego.fernandez@correo.com,Diego Fernandez,usuario,324,19,User123!,20,Masculino,Resistencia,Numeros basicos,Relajado,geometria,5 minutos,288,2024-11-20T00:24:18,2024-07-27T13:24:37
+user-174,ezequiel.juarez@correo.com,Ezequiel Juarez,usuario,385,22,User123!,53,Masculino,Olavarria,Estimulacion cognitiva,Motivado,,,301,2026-07-23T23:36:17,2026-05-07T06:28:38
+user-175,bruno.ramirez@correo.com,Bruno Ramirez,usuario,225,12,User123!,22,Masculino,San Nicolas,Numeros basicos,Concentrado,multiplicacion,5 minutos,182,2025-09-04T14:02:59,2024-11-18T08:24:48
+user-176,paula.bustos@correo.com,Paula Bustos,usuario,268,14,User123!,20,Femenino,Concordia,Numeros basicos,Motivado,division,,238,2026-04-06T10:04:29,2025-09-12T12:04:38
+user-177,hernan.rojas@correo.com,Hernan Rojas,usuario,204,13,User123!,27,Masculino,Mendoza,Construccion civil,Ansioso,geometria,+15 minutos,168,2025-09-06T16:21:47,2025-02-19T11:52:31
+user-178,guillermo.peralta@correo.com,Guillermo Peralta,usuario,194,13,User123!,39,Masculino,Pergamino,Finanzas cotidianas,Ansioso,,+30 minutos,155,2026-07-04T16:59:52,2025-10-17T16:45:14
+user-179,milagros.silva@correo.com,Milagros Silva,usuario,166,9,User123!,42,Femenino,Ushuaia,Economia domestica,Motivado,division,+30 minutos,137,2024-12-29T06:17:08,2024-10-23T08:26:45
+user-180,david.rodriguez@correo.com,David Rodriguez,usuario,358,21,User123!,49,Masculino,Trelew,Comercio minorista,Motivado,division,+30 minutos,286,2026-01-15T05:06:00,2024-12-24T07:45:35
+user-181,guillermina.silva@correo.com,Guillermina Silva,usuario,231,11,User123!,62,Femenino,Gualeguaychu,Estimulacion cognitiva,Confundido,geometria,,185,2025-09-27T06:33:26,2025-09-10T22:23:43
+user-182,rosa.cruz@correo.com,Rosa Cruz,usuario,268,14,User123!,30,Femenino,Jujuy,Construccion civil,Confundido,resta,,203,2024-06-19T01:34:44,2024-05-25T15:17:05
+user-183,leandro.suarez@correo.com,Leandro Suarez,usuario,205,11,User123!,37,Masculino,Corrientes,Finanzas cotidianas,Curioso,geometria,5 minutos,173,2025-11-22T23:50:43,2025-08-20T16:00:04
+user-184,martina.carrizo@correo.com,Martina Carrizo,usuario,302,15,User123!,23,Femenino,Salta,Geometria basica,Relajado,,10 minutos,264,2026-05-18T06:21:42,2024-05-29T22:18:46
+user-185,rosa.zappia2@correo.com,Rosa Zappia,usuario,256,14,User123!,32,Femenino,Trelew,Numeros basicos,Curioso,,+15 minutos,188,2026-07-23T13:33:25,2024-12-19T00:37:14
+user-186,carmen.rojas@correo.com,Carmen Rojas,usuario,381,19,User123!,73,Femenino,Corrientes,Finanzas cotidianas,Motivado,,,332,2026-06-01T13:09:29,2025-01-18T15:47:00
+user-187,sol.flores@correo.com,Sol Flores,usuario,146,7,User123!,20,Femenino,Rio Cuarto,Geometria basica,Curioso,resta,5 minutos,133,2025-07-28T23:13:01,2024-09-03T07:29:53
+user-188,mariana.salinas@correo.com,Mariana Salinas,usuario,333,17,User123!,30,Femenino,Venado Tuerto,Finanzas cotidianas,Motivado,,10 minutos,289,2026-04-08T19:41:44,2025-07-30T21:17:34
+user-189,dante.zappia@correo.com,Dante Zappia,usuario,554,29,User123!,22,Masculino,Mar del Plata,Construccion civil,Relajado,,+15 minutos,465,2025-10-21T21:29:14,2024-08-31T08:36:27
+user-190,dante.ibarra@correo.com,Dante Ibarra,usuario,217,12,User123!,31,Masculino,San Nicolas,Finanzas cotidianas,Curioso,geometria,5 minutos,192,2026-05-27T20:03:06,2025-08-01T05:59:54
+user-191,carla.vazquez@correo.com,Carla Vazquez,usuario,445,23,User123!,33,Femenino,Parana,Finanzas cotidianas,Concentrado,,5 minutos,356,2026-04-20T05:56:26,2025-08-21T02:41:29
+user-192,milagros.zappia@correo.com,Milagros Zappia,usuario,343,18,User123!,20,Femenino,San Rafael,Construccion civil,Motivado,division,+30 minutos,296,2026-07-09T02:20:45,2026-05-05T15:15:40
+user-193,leonardo.cruz@correo.com,Leonardo Cruz,usuario,319,19,User123!,60,Masculino,Comodoro Rivadavia,Finanzas cotidianas,Motivado,suma,5 minutos,274,2025-12-27T03:03:45,2024-12-21T21:20:40
+user-194,guillermo.lopez@correo.com,Guillermo Lopez,usuario,233,15,User123!,41,Prefiero no decirlo,Concordia,Comercio minorista,Motivado,,10 minutos,182,2026-03-20T22:14:30,2024-10-08T17:20:43
+user-195,emiliano.moreno@correo.com,Emiliano Moreno,usuario,94,6,User123!,21,Masculino,San Luis,Geometria basica,Motivado,geometria,,68,2026-06-03T06:03:27,2024-10-14T15:44:32
+user-196,lucia.flores@correo.com,Lucia Flores,usuario,252,13,User123!,35,Femenino,Bariloche,Construccion civil,Concentrado,geometria,10 minutos,187,2026-07-03T22:54:18,2024-08-12T02:13:55
+user-197,javier.franco@correo.com,Javier Franco,usuario,180,11,User123!,41,Masculino,Rawson,Finanzas cotidianas,Ansioso,suma,5 minutos,169,2025-12-29T09:37:06,2025-01-05T20:10:22
+user-198,maximiliano.rios@correo.com,Maximiliano Rios,usuario,159,10,User123!,54,Masculino,Venezuela,Estimulacion cognitiva,Curioso,suma,+30 minutos,111,2024-12-14T10:30:36,2024-08-28T21:20:09
+user-199,ana.cabrera@correo.com,Ana Cabrera,usuario,213,13,User123!,23,Femenino,Santiago del Estero,Geometria basica,Relajado,resta,10 minutos,171,2026-07-22T08:45:59,2024-09-16T14:53:02
+user-200,guillermina.juarez@correo.com,Guillermina Juarez,usuario,297,15,User123!,62,Femenino,Parana,Economia domestica,Concentrado,multiplicacion,+15 minutos,272,2026-04-05T01:05:08,2025-06-02T10:34:51
+user-201,leandro.salinas@correo.com,Leandro Salinas,usuario,492,28,User123!,50,Masculino,Jujuy,Finanzas cotidianas,Motivado,resta,,433,2025-10-23T23:22:28,2025-07-28T13:31:37
+user-202,carlos.aguirre@correo.com,Carlos Aguirre,usuario,176,8,User123!,45,Masculino,Mexico,Porcentajes,Concentrado,geometria,5 minutos,128,2026-07-03T01:27:07,2026-04-28T03:52:49
+user-203,sebastian.salinas@correo.com,Sebastian Salinas,usuario,388,23,User123!,57,Masculino,Bariloche,Finanzas cotidianas,Relajado,geometria,,347,2025-09-17T23:10:22,2024-12-30T23:30:05
+user-204,milagros.aguirre@correo.com,Milagros Aguirre,usuario,234,12,User123!,65,Femenino,Peru,Estimulacion cognitiva,Motivado,division,+30 minutos,214,2025-12-06T13:46:07,2025-10-02T14:18:40
+user-205,gonzalo.franco@correo.com,Gonzalo Franco,usuario,377,22,User123!,41,Prefiero no decirlo,Mercedes,Comercio minorista,Motivado,,+15 minutos,313,2026-07-09T23:31:29,2026-05-09T03:58:55
+user-206,laura.leguizamon@correo.com,Laura Leguizamon,usuario,448,26,User123!,47,Femenino,Buenos Aires,Finanzas cotidianas,Motivado,geometria,10 minutos,377,2026-04-18T00:39:24,2024-11-15T00:51:23
+user-207,graciela.moreno@correo.com,Graciela Moreno,usuario,382,19,User123!,71,Femenino,Rio Cuarto,Estimulacion cognitiva,Motivado,resta,+15 minutos,306,2026-06-16T22:42:31,2025-12-22T22:44:37
+user-208,pedro.figueroa@correo.com,Pedro Figueroa,usuario,416,21,User123!,58,Masculino,Necochea,Economia domestica,Ansioso,,5 minutos,334,2026-02-14T06:14:09,2025-12-30T19:59:19
+user-209,hernan.maldonado@correo.com,Hernan Maldonado,usuario,320,18,User123!,46,Masculino,Rafaela,Finanzas cotidianas,Concentrado,suma,,289,2026-07-24T07:45:04,2026-07-05T18:12:33
+user-210,lucas.luna2@correo.com,Lucas Luna,usuario,180,10,User123!,68,Masculino,Pergamino,Economia domestica,Curioso,resta,+30 minutos,171,2026-03-28T05:20:36,2025-10-12T07:16:29
+user-211,adriana.contreras@correo.com,Adriana Contreras,usuario,252,16,User123!,45,Femenino,Azul,Comercio minorista,Curioso,resta,+30 minutos,212,2024-09-26T08:06:17,2024-07-24T13:18:09
+user-212,alejandro.caceres@correo.com,Alejandro Caceres,usuario,341,18,User123!,67,Masculino,Necochea,Economia domestica,Relajado,suma,+30 minutos,291,2025-11-25T21:29:13,2025-04-01T03:42:25
+user-213,beatriz.godoy@correo.com,Beatriz Godoy,usuario,557,29,User123!,42,Femenino,Concordia,Finanzas cotidianas,Relajado,,10 minutos,447,2026-07-31T20:32:33,2026-07-31T14:10:56
+user-214,guillermina.carrizo@correo.com,Guillermina Carrizo,usuario,231,13,User123!,36,Femenino,Concordia,Porcentajes,Relajado,,10 minutos,177,2026-04-21T17:24:50,2025-07-15T18:54:52
+user-215,micaela.acosta@correo.com,Micaela Acosta,usuario,252,15,User123!,23,Femenino,Salta,Numeros basicos,Curioso,,+30 minutos,194,2025-11-18T04:31:24,2024-10-24T18:40:33
+user-216,bruno.contreras@correo.com,Bruno Contreras,usuario,87,7,User123!,28,Masculino,San Nicolas,Finanzas cotidianas,Confundido,suma,+30 minutos,55,2025-07-20T03:17:37,2025-03-28T20:07:50
+user-217,thiago.sosa@correo.com,Thiago Sosa,usuario,226,12,User123!,55,Masculino,San Luis,Estimulacion cognitiva,Confundido,division,,172,2025-11-09T04:24:15,2025-09-17T17:05:20
+user-218,franco.sandoval@correo.com,Franco Sandoval,usuario,236,11,User123!,24,Masculino,Ushuaia,Finanzas cotidianas,Curioso,multiplicacion,5 minutos,192,2026-04-16T23:54:32,2025-12-16T21:35:57
+user-219,guillermo.delgado@correo.com,Guillermo Delgado,usuario,527,28,User123!,26,Masculino,Rafaela,Numeros basicos,Motivado,division,5 minutos,447,2026-02-20T23:42:31,2025-12-20T10:51:31
+user-220,agustina.acosta@correo.com,Agustina Acosta,usuario,147,8,User123!,39,Femenino,Rio Grande,Construccion civil,Ansioso,multiplicacion,,144,2026-05-08T22:22:52,2026-02-05T23:10:14
+user-221,enzo.moreno@correo.com,Enzo Moreno,usuario,198,11,User123!,70,Prefiero no decirlo,Cordoba,Estimulacion cognitiva,Curioso,,10 minutos,162,2025-09-20T10:59:57,2025-04-27T00:40:29
+user-222,juan.galiano@correo.com,Juan Galiano,usuario,255,14,User123!,74,Masculino,Necochea,Economia domestica,Ansioso,division,10 minutos,197,2026-07-25T20:32:52,2026-03-06T19:14:58
+user-223,carla.carrizo@correo.com,Carla Carrizo,usuario,220,11,User123!,24,Femenino,Mercedes,Geometria basica,Curioso,,10 minutos,203,2024-11-27T01:15:54,2024-10-05T00:48:52
+user-224,nicolas.rios@correo.com,Nicolas Rios,usuario,165,9,User123!,42,Masculino,General Roca,Finanzas cotidianas,Curioso,geometria,,137,2026-02-03T10:09:53,2024-08-22T10:27:38
+user-225,romina.paz@correo.com,Romina Paz,usuario,130,9,User123!,23,Femenino,Tandil,Construccion civil,Curioso,multiplicacion,5 minutos,90,2026-06-11T14:40:20,2026-05-04T06:22:20
+user-226,lucas.zappia2@correo.com,Lucas Zappia,usuario,388,21,User123!,59,Masculino,Ushuaia,Estimulacion cognitiva,Motivado,resta,10 minutos,342,2026-04-26T16:18:39,2026-03-21T16:44:01
+user-227,andrea.bustos@correo.com,Andrea Bustos,usuario,266,17,User123!,44,Femenino,Bahia Blanca,Porcentajes,Motivado,,+30 minutos,209,2025-11-28T01:37:33,2025-01-18T21:45:06
+user-228,graciela.salazar@correo.com,Graciela Salazar,usuario,344,19,User123!,34,Prefiero no decirlo,Salta,Porcentajes,Motivado,suma,5 minutos,284,2026-06-21T17:18:48,2026-05-13T19:55:53
+user-229,lucas.delgado@correo.com,Lucas Delgado,usuario,264,13,User123!,39,Masculino,Ecuador,Finanzas cotidianas,Ansioso,division,,206,2026-02-16T20:01:07,2025-12-01T11:27:00
+user-230,martina.leguizamon@correo.com,Martina Leguizamon,usuario,522,29,User123!,59,Femenino,Corrientes,Economia domestica,Motivado,,+30 minutos,417,2025-08-31T19:54:11,2025-06-04T05:28:56
+user-231,camila.quiroga@correo.com,Camila Quiroga,usuario,32,2,User123!,62,Femenino,Buenos Aires,Estimulacion cognitiva,Confundido,multiplicacion,10 minutos,14,2026-06-14T10:54:39,2024-11-21T04:07:46
+user-232,catalina.rojas@correo.com,Catalina Rojas,usuario,271,13,User123!,28,Femenino,Bahia Blanca,Finanzas cotidianas,Curioso,division,,216,2025-12-26T17:22:36,2025-04-18T18:24:46
+user-233,tomas.ledesma@correo.com,Tomas Ledesma,usuario,182,12,User123!,60,Prefiero no decirlo,Zarate,Economia domestica,Curioso,multiplicacion,,149,2025-10-13T11:50:22,2025-04-12T04:42:50
+user-234,ana.gonzalez@correo.com,Ana Gonzalez,usuario,460,24,User123!,37,Femenino,San Rafael,Porcentajes,Motivado,,+30 minutos,366,2026-03-25T00:50:19,2025-10-16T10:45:19
+user-235,delfina.franco@correo.com,Delfina Franco,usuario,88,5,User123!,67,Prefiero no decirlo,Rosario,Finanzas cotidianas,Ansioso,geometria,10 minutos,63,2026-07-11T16:07:13,2026-07-06T13:01:50
+user-236,ramiro.benitez@correo.com,Ramiro Benitez,usuario,424,23,User123!,23,Masculino,Mar del Plata,Construccion civil,Concentrado,geometria,,331,2026-05-14T01:33:48,2025-12-30T14:25:53
+user-237,valentina.perez@correo.com,Valentina Perez,usuario,221,11,User123!,38,Femenino,Reconquista,Comercio minorista,Curioso,suma,10 minutos,190,2025-01-24T23:17:08,2024-08-30T09:31:29
+user-238,camila.vazquez@correo.com,Camila Vazquez,usuario,99,4,User123!,30,Femenino,Mendoza,Geometria basica,Ansioso,division,,83,2025-12-09T20:21:36,2025-09-21T15:17:26
+user-239,diego.ojeda@correo.com,Diego Ojeda,usuario,166,7,User123!,26,Masculino,Santa Fe,Numeros basicos,Confundido,suma,10 minutos,153,2026-07-15T04:09:40,2026-03-20T01:39:25
+user-240,bruno.medina@correo.com,Bruno Medina,usuario,248,12,User123!,27,Masculino,Comodoro Rivadavia,Numeros basicos,Motivado,multiplicacion,5 minutos,193,2026-06-19T02:27:08,2025-12-05T01:14:24
+user-241,leonardo.franco@correo.com,Leonardo Franco,usuario,167,8,User123!,22,Masculino,Olavarria,Geometria basica,Ansioso,multiplicacion,+30 minutos,161,2026-02-18T12:58:27,2026-01-18T17:47:20
+user-242,sofia.bustos@correo.com,Sofia Bustos,usuario,455,26,User123!,46,Femenino,Tucuman,Numeros basicos,Motivado,resta,10 minutos,390,2025-06-21T12:29:42,2025-04-01T08:00:14
+user-243,carla.lopez@correo.com,Carla Lopez,usuario,218,10,User123!,37,Femenino,Santa Fe,Finanzas cotidianas,Curioso,,+15 minutos,168,2026-05-22T08:01:12,2025-07-11T11:56:24
+user-244,claudia.salazar@correo.com,Claudia Salazar,usuario,327,17,User123!,27,Femenino,Tucuman,Geometria basica,Curioso,,+30 minutos,281,2026-07-13T05:17:53,2024-10-06T07:31:08
+user-245,victoria.fernandez@correo.com,Victoria Fernandez,usuario,196,11,User123!,36,Femenino,Resistencia,Finanzas cotidianas,Motivado,,,169,2026-05-15T22:41:30,2024-05-17T09:37:17
+user-246,ana.carrizo@correo.com,Ana Carrizo,usuario,80,5,User123!,20,Femenino,Mercedes,Geometria basica,Ansioso,,+15 minutos,67,2025-12-09T11:12:41,2024-05-06T20:20:37
+user-247,pedro.marquez@correo.com,Pedro Marquez,usuario,287,17,User123!,52,Masculino,Rawson,Estimulacion cognitiva,Curioso,,5 minutos,218,2025-02-19T09:16:45,2024-10-24T02:21:24
+user-248,carmen.dominguez@correo.com,Carmen Dominguez,usuario,326,16,User123!,53,Femenino,Guatemala,Economia domestica,Confundido,,+15 minutos,256,2025-05-27T18:31:15,2024-10-09T22:13:34
+user-249,javier.zappia@correo.com,Javier Zappia,usuario,25,2,User123!,41,Masculino,Rio Grande,Porcentajes,Confundido,,10 minutos,42,2026-04-23T11:09:03,2025-04-23T15:32:54
+user-250,alejandro.gomez@correo.com,Alejandro Gomez,usuario,18,0,User123!,57,Masculino,La Rioja,Economia domestica,Ansioso,geometria,10 minutos,38,2026-05-04T18:16:17,2026-01-21T16:15:32
+admin-001,sol@correo.com,Sol,admin,0,0,Admin123!,,,,,,,,0,2026-05-20T10:00:00Z,2026-07-27T20:59:14.090Z
+admin-002,sofia@correo.com,Sofia,admin,0,0,Admin123!,,,,,,,,0,2026-05-20T10:00:00Z,2026-07-27T20:59:14.090Z
+admin-003,romina@correo.com,Romina,admin,0,0,Admin123!,,,,,,,,0,2026-05-20T10:00:00Z,2026-07-27T20:59:14.090Z
+admin-004,lisandro@correo.com,Lisandro,admin,0,0,Admin123!,,,,,,,,0,2026-05-20T10:00:00Z,2026-07-27T20:59:14.090Z
+admin-005,isaac@correo.com,Isaac,admin,0,0,Admin123!,,,,,,,,0,2026-05-20T10:00:00Z,2026-07-27T20:59:14.090Z
+admin-006,hernan@correo.com,Hernán,admin,0,0,Admin123!,,,,,,,,0,2026-05-20T10:00:00Z,2026-07-27T20:59:14.090Z
+admin-007,flor@correo.com,Flor,admin,0,0,Admin123!,,,,,,,,0,2026-05-20T10:00:00Z,2026-07-27T20:59:14.090Z
+admin-008,may@correo.com,May,admin,0,0,Admin123!,,,,,,,,0,2026-05-20T10:00:00Z,2026-07-27T20:59:14.090Z
+admin-009,tony@correo.com,Tony,admin,0,0,Admin123!,,,,,,,,0,2026-05-20T10:00:00Z,2026-07-27T20:59:14.090Z
+superadmin-001,cesar@correo.com,César,superadmin,0,0,Admin123!,,,,,,,,0,2026-05-20T10:00:00Z,2026-07-27T20:59:14.090Z
+superadmin-002,gustavo@correo.com,Gustavo,superadmin,0,0,Admin123!,,,,,,,,0,2026-05-20T10:00:00Z,2026-07-27T20:59:14.090Z
+mock-1785185903346,pepe@correo.com,pepe,usuario,0,0,Admin123!,20 a 30 años,Prefiero no decirlo,pendiente,Porcentajes,,multi,5 minutos,0,,2026-07-27T20:58:23.368Z

@@ -43,7 +43,7 @@ const fetchProfile = useCallback(async (user) => {
 
         isFetching.current = true;
         try {
-            const { data } = await api.post('/api/usuarios/registro', {
+            const { data } = await api.post('/usuarios/registro', {
                 uid: user.id,
                 email: user.email,
                 nombre: user.user_metadata?.full_name || user.email.split('@')[0]
@@ -285,7 +285,7 @@ if (IS_MOCK) {
             setLoading(false);
             if (err.message === "SUPABASE_UNAVAILABLE_MOCK" || err.status === 400) {
                 console.warn("⚠️ Supabase no disponible. Entrando en modo de autenticación local (Mock)");
-                const response = await api.post('/api/usuarios/registro', {
+                const response = await api.post('/usuarios/registro', {
                     uid: 'mock-' + Date.now(),
                     email,
                     password,
